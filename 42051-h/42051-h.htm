@@ -1,0 +1,4002 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+  /*<![CDATA[*/
+  /* 
+  Project Gutenberg common docutils stylesheet.
+
+  This stylesheet contains styles common to HTML and EPUB.  Put styles
+  that are specific to HTML and EPUB into their relative stylesheets.
+
+  :Author: Marcello Perathoner (webmaster@gutenberg.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+  */
+
+  /* ADE 1.7.2 chokes on !important and throws all css out. */
+
+  /* FONTS */
+
+  .italics    { font-style: italic }
+  .no-italics { font-style: normal }
+
+  .bold       { font-weight: bold }
+  .no-bold    { font-weight: normal }
+
+  .small-caps { } /* Epub needs italics */
+  .gesperrt   { } /* Epub needs italics */
+  .antiqua    { font-style: italic } /* what else can we do ? */
+  .monospaced { font-family: monospace }
+
+  .smaller    { font-size: smaller }
+  .larger     { font-size: larger }
+
+  .xx-small   { font-size: xx-small }
+  .x-small    { font-size: x-small }
+  .small      { font-size: small }
+  .medium     { font-size: medium }
+  .large      { font-size: large }
+  .x-large    { font-size: x-large }
+  .xx-large   { font-size: xx-large }
+
+  .text-transform-uppercase { text-transform: uppercase }
+  .text-transform-lowercase { text-transform: lowercase }
+  .text-transform-none      { text-transform: none }
+
+  .red        { color: red }
+  .green      { color: green }
+  .blue       { color: blue }
+  .yellow     { color: yellow }
+  .white      { color: white }
+  .gray       { color: gray }
+  .black      { color: black }
+
+  /* ALIGN */
+
+  .left       { text-align: left }
+  .justify    { text-align: justify }
+  .center     { text-align: center; text-indent: 0 }
+  .centerleft { text-align: center; text-indent: 0 }
+  .right      { text-align: right;  text-indent: 0 }
+
+  /* LINE HEIGHT */
+
+  body        { line-height: 1.5 }
+  p           { margin: 0; 
+              text-indent: 2em }
+
+  /* PAGINATION */
+
+  .title, .subtitle     { page-break-after:  avoid }
+
+  .container, .title, .subtitle, #pg-header            
+                      { page-break-inside: avoid }
+
+  /* SECTIONS */
+
+  body         { text-align: justify }
+
+  p.pfirst, p.noindent { 
+    text-indent: 0 
+  }
+
+  .boxed         { border: 1px solid black; padding: 1em }
+  .topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+  div.section    { clear: both }
+
+  div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+  div.line-block.inner { margin: 0 0 0 10% }
+  div.line             { margin-left: 20%; text-indent: -20%; }
+  .line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+  hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+  div.transition       { margin: 1.5em 0 }
+
+  .vfill, .vspace      { border: 0px solid white }
+
+  .title               { margin: 1.5em 0 }
+  .title.with-subtitle { margin-bottom: 0 }
+  .subtitle            { margin: 1.5em 0 }
+
+  /* header font style */
+  /* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+  h1.title                        { font-size: 200%; }  /* for book title only */
+  h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+  h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+  h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+  h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+  h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+  /* title page */
+
+  h1.title, p.subtitle.level-1,
+  h2.title, p.subtitle.level-2    { text-align: center }
+
+  #pg-header,
+  h1.document-title               { margin: 10% 0 5% 0 }
+  p.document-subtitle             { margin:  0  0 5% 0 }
+
+  /* PG header and footer */
+  #pg-machine-header { }
+  #pg-produced-by { }
+
+  li.toc-entry            { list-style-type: none }
+  ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+  .attribution            { margin-top: 1.5em }
+
+  .example-rendered { 
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+  .literal-block.example-source   { 
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+  /* DROPCAPS */
+
+  /* BLOCKQUOTES */
+
+  blockquote { margin: 1.5em 10% }
+
+  blockquote.epigraph { }
+
+  blockquote.highlights { }
+
+  div.local-contents { margin: 1.5em 10% }
+
+  div.abstract { margin: 3em   10% }
+  div.image    { margin: 1.5em  0  }
+  div.caption  { margin: 1.5em  0 }
+  div.legend   { margin: 1.5em  0 }
+
+  .hidden { display: none }
+
+  .invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+  a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+  dl.docutils dd {
+  margin-bottom: 0.5em }
+
+  div.figure { margin-top: 3em; margin-bottom: 3em }
+
+  img { max-width: 100% }
+
+  div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+  div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+  div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+  ol.simple, ul.simple { margin: 1.5em 0 }
+
+  ol.toc-list,    ul.toc-list    { padding-left:  0  }
+  ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+  ol.arabic {
+  list-style: decimal }
+
+  ol.loweralpha {
+  list-style: lower-alpha }
+
+  ol.upperalpha {
+  list-style: upper-alpha }
+
+  ol.lowerroman {
+  list-style: lower-roman }
+
+  ol.upperroman {
+  list-style: upper-roman }
+
+  p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+  p.label {
+  white-space: nowrap }
+
+  p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+  p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+  p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+  pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+  .literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+  span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+  span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  span.interpreted {
+  font-family: sans-serif }
+
+  span.option {
+  white-space: nowrap }
+
+  span.pre {
+  white-space: pre }
+
+  span.problematic {
+  color: red }
+
+  span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+  table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+  table.align-left, table.align-right { margin-top: 0 }
+
+  table.table                { border-collapse: collapse; }
+
+  table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+  table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+  table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+  table.table.hrules-rows  tr.last        { border-width: 0 }
+  table.table.hrules-rows  td, 
+  table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+  table.table tr             { border-width: 0 }
+  table.table td, 
+  table.table th             { padding: 0.5ex 1em }
+  table.table tr.first td    { padding-top: 1ex }
+  table.table tr.last td     { padding-bottom: 1ex }
+  table.table tr.first th    { padding-top: 1ex }
+  table.table tr.last th     { padding-bottom: 1ex }
+
+
+  table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+  table.docinfo {
+  margin: 3em 4em }
+
+  table.docutils { }
+
+  div.footnote-group          { margin: 1em 0 }
+  table.footnote td.label     { width: 2em; text-align: right; padding-left: 0 }
+
+  table.docutils td, table.docutils th,
+  table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+  table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+  /* used to remove borders from tables and images */
+  .borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+  table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+  h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+  h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+  ul.auto-toc {
+  list-style-type: none }
+  /*]]>*/
+  </style>
+  <style type="text/css">
+  /*<![CDATA[*/
+  /* 
+  Project Gutenberg HTML docutils stylesheet.
+
+  This stylesheet contains styles specific to HTML.
+  */
+
+  /* FONTS */
+
+  /* em                { font-style: normal }
+  strong            { font-weight: normal } */
+
+  .small-caps       { font-variant: small-caps }
+  .gesperrt         { letter-spacing: 0.1em }
+
+  /* ALIGN */
+
+  .align-left       { clear: left;
+                    float: left;
+                    margin-right: 1em }
+
+  .align-right      { clear: right;
+                    float: right;
+                    margin-left: 1em }
+
+  .align-center     { margin-left: auto;
+                    margin-right: auto }
+
+  div.shrinkwrap    { display: table; }
+
+  /* SECTIONS */
+
+  body              { margin: 5% 10% 5% 10% }
+
+  /* compact list items containing just one p */
+  li p.pfirst       { margin-top: 0; margin-bottom: 0 } 
+
+  .first            { margin-top: 0 !important; 
+                    text-indent: 0 !important } 
+  .last             { margin-bottom: 0 !important }
+
+  span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+  img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+  span.dropspan     { font-variant: small-caps }
+
+  .no-page-break    { page-break-before: avoid !important }
+
+  /* PAGINATION */
+
+  @media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+  }
+
+  @media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+  }
+
+  /*]]>*/
+  </style>
+  <title>AKRA THE SLAVE</title>
+  <style type="text/css">
+  /*<![CDATA[*/
+  .pageno       { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+  .pageno:after { color: gray; content: '[' attr(title) ']' }
+  .lineno       { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+  .lineno:after { color: gray; content: '[' attr(title) ']' }
+  .toc-pageref  { float: right }
+  pre           { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+  /*]]>*/
+  </style>
+</head>
+<body>
+  <div class="document" id="akra-the-slave">
+    <h1 class="center document-title level-1 pfirst title"><span class="x-large">AKRA THE SLAVE</span></h1><!-- this is the default PG-RST stylesheet -->
+    <!-- figure and image styles for non-image formats -->
+    <!-- default transition -->
+    <!-- default attribution -->
+    <!-- -*- encoding: utf-8 -*- -->
+    <div class="clearpage"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="align-None container coverpage">
+      <div class="vspace" style="height: 3em"></div>
+      <div class="align-center auto-scaled figure margin" style="width: 58%" id="figure-10">
+        <span id="cover"></span><img class="align-center block" style="display: block; width: 100%" alt="Cover" src="images/img-cover.jpg" />
+        <div class="caption centerleft figure-caption margin">
+          <span class="italics">Cover</span>
+        </div>
+      </div>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="align-None container titlepage">
+      <p class="center pfirst"><span class="x-large">AKRA THE SLAVE</span></p>
+      <div class="vspace" style="height: 2em"></div>
+      <p class="center pfirst"><span class="medium">BY<br />
+      WILFRID WILSON GIBSON</span></p>
+      <div class="vspace" style="height: 3em"></div>
+      <p class="center pfirst"><span class="medium">LONDON<br />
+      ELKIN MATHEWS, VIGO STREET<br />
+      MCMX</span></p>
+    </div>
+    <div class="vspace" style="height: 4em"></div>
+    <div class="line-block outermost">
+      <div class="line">
+        <em class="italics">Six years ago, I wrote this story down,</em>
+      </div>
+      <div class="line">
+        <em class="italics">While yet the light of Eastern skies</em>
+      </div>
+      <div class="line">
+        <em class="italics">Was in my eyes,</em>
+      </div>
+      <div class="line">
+        <em class="italics">And still my heart, aglow with memories</em>
+      </div>
+      <div class="line">
+        <em class="italics">Of sun-enraptured seas,</em>
+      </div>
+      <div class="line">
+        <em class="italics">And that old sea-girt town.</em>
+      </div>
+      <div class="line">
+        <em class="italics">Where, down dark alleys of enchanted night,</em>
+      </div>
+      <div class="line">
+        <em class="italics">We stole, until we came</em>
+      </div>
+      <div class="line">
+        <em class="italics">To where the great dome glimmered white.</em>
+      </div>
+      <div class="line">
+        <em class="italics">And every minaret,</em>
+      </div>
+      <div class="line">
+        <em class="italics">A shaft of pearly flame,</em>
+      </div>
+      <div class="line">
+        <em class="italics">Beneath the cloudy moon...</em>
+      </div>
+      <div class="line">
+        &nbsp;
+      </div>
+      <div class="line">
+        <em class="italics">Six years ago!</em>
+      </div>
+      <div class="line">
+        <em class="italics">Ah! soon--too soon,</em>
+      </div>
+      <div class="line">
+        <em class="italics">Our tale, too, will be told:</em>
+      </div>
+      <div class="line">
+        <em class="italics">And yet, and yet,</em>
+      </div>
+      <div class="line">
+        <em class="italics">From this old Eastern tale we know,</em>
+      </div>
+      <div class="line">
+        <em class="italics">Love's story never can grow old,</em>
+      </div>
+      <div class="line">
+        <em class="italics">Till Love, himself, forget.</em>
+      </div>
+    </div>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst"><span class="x-large">AKRA THE SLAVE</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>He thought to see me tremble</span>
+      </div>
+      <div class="line">
+        <span>And totter as an oar-snapt reed,</span>
+      </div>
+      <div class="line">
+        <span>When he spake death to me--</span>
+      </div>
+      <div class="line">
+        <span>My courage, toppled in the dust,</span>
+      </div>
+      <div class="line">
+        <span>Even as the head of cactus</span>
+      </div>
+      <div class="line">
+        <span>The camel-keeper slashes</span>
+      </div>
+      <div class="line">
+        <span>That his beasts may browse, unscathed,</span>
+      </div>
+      <div class="line">
+        <span>The succulent, wounded green.</span>
+      </div>
+      <div class="line">
+        <span>He thought to have me, broken,</span>
+      </div>
+      <div class="line">
+        <span>And grovelling at his feet;</span>
+      </div>
+      <div class="line">
+        <span>Mouthing and mumbling to his sandal-ties,</span>
+      </div>
+      <div class="line">
+        <span>In stammering dread of death--</span>
+      </div>
+      <div class="line">
+        <span>Aye! even as a king,</span>
+      </div>
+      <div class="line">
+        <span>Who, having from death's hand,</span>
+      </div>
+      <div class="line">
+        <span>Received his crown and kingdom,</span>
+      </div>
+      <div class="line">
+        <span>For ever treads in terror of the hour</span>
+      </div>
+      <div class="line">
+        <span>When death shall jog his elbow,</span>
+      </div>
+      <div class="line">
+        <span>Twitch the purple from his shoulders,</span>
+      </div>
+      <div class="line">
+        <span>And claim again the borrowed crown.</span>
+      </div>
+      <div class="line">
+        <span>But, little need have I to fear</span>
+      </div>
+      <div class="line">
+        <span>The crouching, lean camp-follower,</span>
+      </div>
+      <div class="line">
+        <span>Unto whose ever-gaping maw,</span>
+      </div>
+      <div class="line">
+        <span>Day after day, I flung</span>
+      </div>
+      <div class="line">
+        <span>The spoils of bow and arrow,</span>
+      </div>
+      <div class="line">
+        <span>Ere I was taken captive--</span>
+      </div>
+      <div class="line">
+        <span>I, who have often, at my mother's breast,</span>
+      </div>
+      <div class="line">
+        <span>Awakened in the night-time,</span>
+      </div>
+      <div class="line">
+        <span>To see death leering on me from the cave-mouth,</span>
+      </div>
+      <div class="line">
+        <span>A gaunt and slinking shape</span>
+      </div>
+      <div class="line">
+        <span>That snuffed the dying embers,</span>
+      </div>
+      <div class="line">
+        <span>Blotting out the friendly stars--</span>
+      </div>
+      <div class="line">
+        <span>I, who, a scarce-weaned boy,</span>
+      </div>
+      <div class="line">
+        <span>Have toddled, gay and fearless,</span>
+      </div>
+      <div class="line">
+        <span>Down the narrow jungle-track,</span>
+      </div>
+      <div class="line">
+        <span>Through bodeful forest-darkness, panther-eyed;</span>
+      </div>
+      <div class="line">
+        <span>And have felt cold snakes uncoiling</span>
+      </div>
+      <div class="line">
+        <span>And gliding 'neath my naked sole,</span>
+      </div>
+      <div class="line">
+        <span>From clammy slumber startled;</span>
+      </div>
+      <div class="line">
+        <span>While, with sharp snap and crackle,</span>
+      </div>
+      <div class="line">
+        <span>Beast-trodden branches strained behind me,</span>
+      </div>
+      <div class="line">
+        <span>My father's hand scarce snatching me</span>
+      </div>
+      <div class="line">
+        <span>Before the spring of crouching death!</span>
+      </div>
+      <div class="line">
+        <span>But, naught of this the King could know,</span>
+      </div>
+      <div class="line">
+        <span>He only knew that, on that far-off morning,</span>
+      </div>
+      <div class="line">
+        <span>When first I came before him, captive,</span>
+      </div>
+      <div class="line">
+        <span>Among my captive brothers,</span>
+      </div>
+      <div class="line">
+        <span>And, as he lightly held, in idle fingers,</span>
+      </div>
+      <div class="line">
+        <span>Above my unbowed head,</span>
+      </div>
+      <div class="line">
+        <span>In equal poise</span>
+      </div>
+      <div class="line">
+        <span>Death's freedom</span>
+      </div>
+      <div class="line">
+        <span>Or the servitude of life,</span>
+      </div>
+      <div class="line">
+        <span>I clutched at life:</span>
+      </div>
+      <div class="line">
+        <span>And cared but little that his lips</span>
+      </div>
+      <div class="line">
+        <span>Should curl, to see me, broken,</span>
+      </div>
+      <div class="line">
+        <span>A slave among his slaves.</span>
+      </div>
+      <div class="line">
+        <span>Yet, never slave of his was I;</span>
+      </div>
+      <div class="line">
+        <span>Nor did I take my new life from his nod--</span>
+      </div>
+      <div class="line">
+        <span>I ... I who could have torn</span>
+      </div>
+      <div class="line">
+        <span>The proud life out of him,</span>
+      </div>
+      <div class="line">
+        <span>Before his guards could stay me...</span>
+      </div>
+      <div class="line">
+        <span>Had she not sat beside him, on her throne.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>And he, who knew not then,</span>
+      </div>
+      <div class="line">
+        <span>Nor ever, till to-day,</span>
+      </div>
+      <div class="line">
+        <span>Has known me aught but slave,</span>
+      </div>
+      <div class="line">
+        <span>Remembering that time,</span>
+      </div>
+      <div class="line">
+        <span>Spake doom of death to me,</span>
+      </div>
+      <div class="line">
+        <span>Idly, as to a slave:</span>
+      </div>
+      <div class="line">
+        <span>And I await the end of night,</span>
+      </div>
+      <div class="line">
+        <span>And dawn of death,</span>
+      </div>
+      <div class="line">
+        <span>Even as a slave awaits...</span>
+      </div>
+      <div class="line">
+        <span>Nay! as the unvanquished veteran</span>
+      </div>
+      <div class="line">
+        <span>Awaits the hour of victory.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>In silence, wheels the night,</span>
+      </div>
+      <div class="line">
+        <span>Star-marshalled, over dreaming Babylon;</span>
+      </div>
+      <div class="line">
+        <span>And none in all the sleeping city stirs,</span>
+      </div>
+      <div class="line">
+        <span>Save the cloaked sentries on the outer walls</span>
+      </div>
+      <div class="line">
+        <span>Who tread out patience 'twixt the gates of brass,</span>
+      </div>
+      <div class="line">
+        <span>Numb with scarce-baffled slumber,</span>
+      </div>
+      <div class="line">
+        <span>Or, maybe, some unsleeping priest of Bel,</span>
+      </div>
+      <div class="line">
+        <span>A lonely warder of eternity,</span>
+      </div>
+      <div class="line">
+        <span>Who watches on the temple's seventh stage,</span>
+      </div>
+      <div class="line">
+        <span>With the unslumbering gods.</span>
+      </div>
+      <div class="line">
+        <span>Yet, may not she, the Queen,</span>
+      </div>
+      <div class="line">
+        <span>Whose beauty, slaying my body,</span>
+      </div>
+      <div class="line">
+        <span>Brings my soul to immortal birth,</span>
+      </div>
+      <div class="line">
+        <span>Although she does not know</span>
+      </div>
+      <div class="line">
+        <span>Of my last vigil on the peak of life--</span>
+      </div>
+      <div class="line">
+        <span>Yet, may not she awaken, troubled</span>
+      </div>
+      <div class="line">
+        <span>By strange, bewildering dreams,</span>
+      </div>
+      <div class="line">
+        <span>With heart a little fearful of the dawn</span>
+      </div>
+      <div class="line">
+        <span>Of day, yet unrevealed?</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>There is no sound at all,</span>
+      </div>
+      <div class="line">
+        <span>Save only the cool plashing</span>
+      </div>
+      <div class="line">
+        <span>Of fountains in the courtyard</span>
+      </div>
+      <div class="line">
+        <span>Without my lonely cell:</span>
+      </div>
+      <div class="line">
+        <span>For fate has granted to me</span>
+      </div>
+      <div class="line">
+        <span>This last, least consolation of sweet sound</span>
+      </div>
+      <div class="line">
+        <span>Though in the plains I perish,</span>
+      </div>
+      <div class="line">
+        <span>I shall hear the noise of waters,</span>
+      </div>
+      <div class="line">
+        <span>The noise of running waters,</span>
+      </div>
+      <div class="line">
+        <span>As I die.</span>
+      </div>
+      <div class="line">
+        <span>My earliest lullaby shall sing</span>
+      </div>
+      <div class="line">
+        <span>My heart again to slumber.</span>
+      </div>
+      <div class="line">
+        <span>And, even now, I hear</span>
+      </div>
+      <div class="line">
+        <span>Stream-voices, long-forgotten, calling me</span>
+      </div>
+      <div class="line">
+        <span>Back to the hills of home;</span>
+      </div>
+      <div class="line">
+        <span>And, dreaming, I remember</span>
+      </div>
+      <div class="line">
+        <span>The little yellow brooks</span>
+      </div>
+      <div class="line">
+        <span>That ever, day and night,</span>
+      </div>
+      <div class="line">
+        <span>Gush down the mountains singing,</span>
+      </div>
+      <div class="line">
+        <span>Singing by the caves:</span>
+      </div>
+      <div class="line">
+        <span>And hearkening unto them,</span>
+      </div>
+      <div class="line">
+        <span>Once more a tiny baby,</span>
+      </div>
+      <div class="line">
+        <span>A wee brown fist I dabble</span>
+      </div>
+      <div class="line">
+        <span>In the foaming cool,</span>
+      </div>
+      <div class="line">
+        <span>Frothing round my wrist,</span>
+      </div>
+      <div class="line">
+        <span>Spurting up my arm,</span>
+      </div>
+      <div class="line">
+        <span>Spraying my warm face;</span>
+      </div>
+      <div class="line">
+        <span>And then again I chuckle,</span>
+      </div>
+      <div class="line">
+        <span>As I see an empty gourd,</span>
+      </div>
+      <div class="line">
+        <span>Fallen in the swirling waters,</span>
+      </div>
+      <div class="line">
+        <span>Bobbing on the tawny eddies,</span>
+      </div>
+      <div class="line">
+        <span>Swiftly out of sight.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>And yet most clearly to remembrance comes</span>
+      </div>
+      <div class="line">
+        <span>That far-off night, in early Spring,</span>
+      </div>
+      <div class="line">
+        <span>When, loud with melted snow from Northern peaks,</span>
+      </div>
+      <div class="line">
+        <span>The torrent roared and fretted;</span>
+      </div>
+      <div class="line">
+        <span>While, couched within the cavern,</span>
+      </div>
+      <div class="line">
+        <span>The clamour kept me wakeful;</span>
+      </div>
+      <div class="line">
+        <span>And, even when I slept,</span>
+      </div>
+      <div class="line">
+        <span>Tumbled, tumultuous, through my dreams,</span>
+      </div>
+      <div class="line">
+        <span>And seemed to surge about me,</span>
+      </div>
+      <div class="line">
+        <span>As the brawl of armèd men.</span>
+      </div>
+      <div class="line">
+        <span>And once I sprang from slumber,</span>
+      </div>
+      <div class="line">
+        <span>Hot and startled,</span>
+      </div>
+      <div class="line">
+        <span>Dreaming that I felt</span>
+      </div>
+      <div class="line">
+        <span>A warm breath on my cheek,</span>
+      </div>
+      <div class="line">
+        <span>As if a jackal nuzzled me;</span>
+      </div>
+      <div class="line">
+        <span>Or some dread, slinking foe</span>
+      </div>
+      <div class="line">
+        <span>Made certain of my sleeping</span>
+      </div>
+      <div class="line">
+        <span>Before he plunged the steel.</span>
+      </div>
+      <div class="line">
+        <span>But nothing stirred within the glimmering cavern,</span>
+      </div>
+      <div class="line">
+        <span>Where, all around me, lay my sleeping kindred;</span>
+      </div>
+      <div class="line">
+        <span>And, when I stole without, with noiseless footsteps,</span>
+      </div>
+      <div class="line">
+        <span>To rouse the smouldering watchfire into flame,</span>
+      </div>
+      <div class="line">
+        <span>And cast fresh, crackling brushwood on the blaze,</span>
+      </div>
+      <div class="line">
+        <span>I caught no glint of arms betwixt the branches,</span>
+      </div>
+      <div class="line">
+        <span>Nor any sound or rumour, save</span>
+      </div>
+      <div class="line">
+        <span>The choral noise of cold hill-waters,</span>
+      </div>
+      <div class="line">
+        <span>Cold hill-waters singing,</span>
+      </div>
+      <div class="line">
+        <span>Singing to the stars.</span>
+      </div>
+      <div class="line">
+        <span>And so I turned me from the brooding night;</span>
+      </div>
+      <div class="line">
+        <span>And, couched again upon the leopard-skins,</span>
+      </div>
+      <div class="line">
+        <span>I slept, till dawn, in dream-untroubled sleep.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>I woke to see the cold sky kindling red,</span>
+      </div>
+      <div class="line">
+        <span>Beyond the mounded ash of the spent fire;</span>
+      </div>
+      <div class="line">
+        <span>And lay, a moment, watching</span>
+      </div>
+      <div class="line">
+        <span>The pearly light, caught, trembling,</span>
+      </div>
+      <div class="line">
+        <span>In dewy-beaded spiders' webs</span>
+      </div>
+      <div class="line">
+        <span>About the cave-mouth woven.</span>
+      </div>
+      <div class="line">
+        <span>Then I arose;</span>
+      </div>
+      <div class="line">
+        <span>And left my kindred, slumbering--</span>
+      </div>
+      <div class="line">
+        <span>My mother, by my father,</span>
+      </div>
+      <div class="line">
+        <span>And, at her breast, her youngest babe,</span>
+      </div>
+      <div class="line">
+        <span>With dimpled fingers clutching at her bosom;</span>
+      </div>
+      <div class="line">
+        <span>And, all around them, lying</span>
+      </div>
+      <div class="line">
+        <span>Their sons and daughters, beautiful in sleep,</span>
+      </div>
+      <div class="line">
+        <span>With parted lips,</span>
+      </div>
+      <div class="line">
+        <span>And easy limbs outstretched</span>
+      </div>
+      <div class="line">
+        <span>Along the tumbled bedskins:</span>
+      </div>
+      <div class="line">
+        <span>And while they slumbered yet in shades of night,</span>
+      </div>
+      <div class="line">
+        <span>I sprang out naked</span>
+      </div>
+      <div class="line">
+        <span>Into eager dawn.</span>
+      </div>
+      <div class="line">
+        <span>The sun had not yet scaled the eastern ridge:</span>
+      </div>
+      <div class="line">
+        <span>And still the vales were hidden from my eyes</span>
+      </div>
+      <div class="line">
+        <span>By snowy wreaths of swathing mist:</span>
+      </div>
+      <div class="line">
+        <span>But, high upon a scar</span>
+      </div>
+      <div class="line">
+        <span>That jutted sheer and stark,</span>
+      </div>
+      <div class="line">
+        <span>In cold grey light,</span>
+      </div>
+      <div class="line">
+        <span>There stood an antelope,</span>
+      </div>
+      <div class="line">
+        <span>With lifted muzzle snuffing the fresh day;</span>
+      </div>
+      <div class="line">
+        <span>When scenting me afar,</span>
+      </div>
+      <div class="line">
+        <span>He plunged into the mist</span>
+      </div>
+      <div class="line">
+        <span>With one quick, startled bound:</span>
+      </div>
+      <div class="line">
+        <span>And, from the smoking vapour,</span>
+      </div>
+      <div class="line">
+        <span>Arose a gentle pattering,</span>
+      </div>
+      <div class="line">
+        <span>As, down the rocky trail,</span>
+      </div>
+      <div class="line">
+        <span>The unseen herd went trotting</span>
+      </div>
+      <div class="line">
+        <span>Upon their leader's heels.</span>
+      </div>
+      <div class="line">
+        <span>And from the clear horizon</span>
+      </div>
+      <div class="line">
+        <span>The exultant sun sprang god-like:</span>
+      </div>
+      <div class="line">
+        <span>And on a little mound I stood,</span>
+      </div>
+      <div class="line">
+        <span>With eager arms outstretched,</span>
+      </div>
+      <div class="line">
+        <span>That, over my cold body,</span>
+      </div>
+      <div class="line">
+        <span>The first warm golden beams</span>
+      </div>
+      <div class="line">
+        <span>Of his life-giving light might fall.</span>
+      </div>
+      <div class="line">
+        <span>And thus, awhile, I stood.</span>
+      </div>
+      <div class="line">
+        <span>In radiant adoration tranced,</span>
+      </div>
+      <div class="line">
+        <span>Until I caught the call of waters;</span>
+      </div>
+      <div class="line">
+        <span>And, running downwards to the stream,</span>
+      </div>
+      <div class="line">
+        <span>That plunged into a darkling pool,</span>
+      </div>
+      <div class="line">
+        <span>Where, in the rock was scooped a wide, deep basin;</span>
+      </div>
+      <div class="line">
+        <span>Upon the glassy brink,</span>
+      </div>
+      <div class="line">
+        <span>A moment, I hung, shivering,</span>
+      </div>
+      <div class="line">
+        <span>And gazing down through deeps of lucent shadow;</span>
+      </div>
+      <div class="line">
+        <span>And then I leapt headlong,</span>
+      </div>
+      <div class="line">
+        <span>And felt the cloven waters</span>
+      </div>
+      <div class="line">
+        <span>Closing, icy-cold, above me,</span>
+      </div>
+      <div class="line">
+        <span>And, again, with sobbing breath,</span>
+      </div>
+      <div class="line">
+        <span>Battled to the light and air:</span>
+      </div>
+      <div class="line">
+        <span>And I ran into the sunshine,</span>
+      </div>
+      <div class="line">
+        <span>Shaking from my tingling limbs</span>
+      </div>
+      <div class="line">
+        <span>Showers of scintillating drops</span>
+      </div>
+      <div class="line">
+        <span>Over radiant, dewy beds</span>
+      </div>
+      <div class="line">
+        <span>Of the snowy cyclamen,</span>
+      </div>
+      <div class="line">
+        <span>And dark-red anemone,</span>
+      </div>
+      <div class="line">
+        <span>Till my tawny body glowed</span>
+      </div>
+      <div class="line">
+        <span>With warm, ruddy, pulsing life.</span>
+      </div>
+      <div class="line">
+        <span>And then again I sought the stream,</span>
+      </div>
+      <div class="line">
+        <span>And plunged; and now, more boldly,</span>
+      </div>
+      <div class="line">
+        <span>I crossed the pool, with easy stroke;</span>
+      </div>
+      <div class="line">
+        <span>And climbed the further crag;</span>
+      </div>
+      <div class="line">
+        <span>And, turning, plunged again.</span>
+      </div>
+      <div class="line">
+        <span>And so, I dived and swam,</span>
+      </div>
+      <div class="line">
+        <span>Till pangs of hunger pricked</span>
+      </div>
+      <div class="line">
+        <span>My idle fancy homeward:</span>
+      </div>
+      <div class="line">
+        <span>And eagerly I climbed the hill;</span>
+      </div>
+      <div class="line">
+        <span>When, not a sling's throw from the cavern,</span>
+      </div>
+      <div class="line">
+        <span>Stooping to pluck a red anemone,</span>
+      </div>
+      <div class="line">
+        <span>To prank the wet, black tangle of my hair,</span>
+      </div>
+      <div class="line">
+        <span>I heard a shout;</span>
+      </div>
+      <div class="line">
+        <span>And looking up,</span>
+      </div>
+      <div class="line">
+        <span>I saw strange men</span>
+      </div>
+      <div class="line">
+        <span>With lifted spears</span>
+      </div>
+      <div class="line">
+        <span>Bear down on me:</span>
+      </div>
+      <div class="line">
+        <span>And as I turned,</span>
+      </div>
+      <div class="line">
+        <span>A javelin sang</span>
+      </div>
+      <div class="line">
+        <span>Above my shrinking shoulder,</span>
+      </div>
+      <div class="line">
+        <span>And bit the ground before me.</span>
+      </div>
+      <div class="line">
+        <span>But, swift as light I sped,</span>
+      </div>
+      <div class="line">
+        <span>Until I reached the pool,</span>
+      </div>
+      <div class="line">
+        <span>And leapt therein:</span>
+      </div>
+      <div class="line">
+        <span>And he who pressed most hotly on my heels,</span>
+      </div>
+      <div class="line">
+        <span>Fell stumbling after.</span>
+      </div>
+      <div class="line">
+        <span>Still I never slackened,</span>
+      </div>
+      <div class="line">
+        <span>Although I heard a floundering splash,</span>
+      </div>
+      <div class="line">
+        <span>And then the laughter of his comrades:</span>
+      </div>
+      <div class="line">
+        <span>And, as I swam for life,</span>
+      </div>
+      <div class="line">
+        <span>Betwixt my thrusting heels,</span>
+      </div>
+      <div class="line">
+        <span>Another spear that clove the crystal waters</span>
+      </div>
+      <div class="line">
+        <span>Glanced underneath my body,</span>
+      </div>
+      <div class="line">
+        <span>And in the stream-bed quivered bolt upright,</span>
+      </div>
+      <div class="line">
+        <span>Caught in a cleft of rock.</span>
+      </div>
+      <div class="line">
+        <span>With frantic arm I struck</span>
+      </div>
+      <div class="line">
+        <span>Straight as a snake across the pool,</span>
+      </div>
+      <div class="line">
+        <span>And climbed the further bank;</span>
+      </div>
+      <div class="line">
+        <span>And plunging through deep brake,</span>
+      </div>
+      <div class="line">
+        <span>Ran wildly onward,</span>
+      </div>
+      <div class="line">
+        <span>Startling as I went</span>
+      </div>
+      <div class="line">
+        <span>A browsing herd of antelope,</span>
+      </div>
+      <div class="line">
+        <span>That, bounding, fled before me down the valley</span>
+      </div>
+      <div class="line">
+        <span>And after them I raced,</span>
+      </div>
+      <div class="line">
+        <span>As though the hunter,</span>
+      </div>
+      <div class="line">
+        <span>Not the hunted,</span>
+      </div>
+      <div class="line">
+        <span>Until the chase sang in my blood,</span>
+      </div>
+      <div class="line">
+        <span>And braced my straining thews.</span>
+      </div>
+      <div class="line">
+        <span>I knew not if men followed,</span>
+      </div>
+      <div class="line">
+        <span>Yet, on I sped, impetuously,</span>
+      </div>
+      <div class="line">
+        <span>As speeds the fleet-foot onaga,</span>
+      </div>
+      <div class="line">
+        <span>That breasts the windy morning,</span>
+      </div>
+      <div class="line">
+        <span>With lifted head, and nostrils wide,</span>
+      </div>
+      <div class="line">
+        <span>Exultant in his youth.</span>
+      </div>
+      <div class="line">
+        <span>So, on and ever on,</span>
+      </div>
+      <div class="line">
+        <span>Scarce knowing why I ran--</span>
+      </div>
+      <div class="line">
+        <span>Enough for me to feel</span>
+      </div>
+      <div class="line">
+        <span>Earth beaten back behind my heels,</span>
+      </div>
+      <div class="line">
+        <span>And hear the loud air singing</span>
+      </div>
+      <div class="line">
+        <span>The blood-song in my ears:</span>
+      </div>
+      <div class="line">
+        <span>Till, stumbling headlong over</span>
+      </div>
+      <div class="line">
+        <span>An unseen, fallen branch,</span>
+      </div>
+      <div class="line">
+        <span>I rolled in a deep bed of withered leaves;</span>
+      </div>
+      <div class="line">
+        <span>And lay, full-length in shuddering ecstasy</span>
+      </div>
+      <div class="line">
+        <span>Of hot, tumultuous blood that rioted</span>
+      </div>
+      <div class="line">
+        <span>Through every throbbing vein.</span>
+      </div>
+      <div class="line">
+        <span>But when again, I breathed more easily,</span>
+      </div>
+      <div class="line">
+        <span>And my wild, fluttering heart kept slower beat,</span>
+      </div>
+      <div class="line">
+        <span>Hot-foot, my thoughts ran, wondering, backward:</span>
+      </div>
+      <div class="line">
+        <span>And I arose and followed them</span>
+      </div>
+      <div class="line">
+        <span>With swift and stealthy pace,</span>
+      </div>
+      <div class="line">
+        <span>Until I reached the stream.</span>
+      </div>
+      <div class="line">
+        <span>Along the bank I stole with wary step,</span>
+      </div>
+      <div class="line">
+        <span>Until I came to where the waters</span>
+      </div>
+      <div class="line">
+        <span>Narrowed, raging through a gorge,</span>
+      </div>
+      <div class="line">
+        <span>Nigh the threshold of my home:</span>
+      </div>
+      <div class="line">
+        <span>And across the thunderous flood,</span>
+      </div>
+      <div class="line">
+        <span>From crag to crag I leapt:</span>
+      </div>
+      <div class="line">
+        <span>And then I climbed a cedar,</span>
+      </div>
+      <div class="line">
+        <span>From whose close ambush I could watch</span>
+      </div>
+      <div class="line">
+        <span>Who came or went about the cavern-mouth.</span>
+      </div>
+      <div class="line">
+        <span>I lay along a level branch:</span>
+      </div>
+      <div class="line">
+        <span>And, through the thick, dark screen,</span>
+      </div>
+      <div class="line">
+        <span>I peered with eager eyes:</span>
+      </div>
+      <div class="line">
+        <span>But no one crossed my sight.</span>
+      </div>
+      <div class="line">
+        <span>The whole land lay before me, drowsing</span>
+      </div>
+      <div class="line">
+        <span>In deepest noonday slumber:</span>
+      </div>
+      <div class="line">
+        <span>No twig stirred in the breathless blaze;</span>
+      </div>
+      <div class="line">
+        <span>And underneath the boughs no serpent rustled:</span>
+      </div>
+      <div class="line">
+        <span>And, in the earth and air,</span>
+      </div>
+      <div class="line">
+        <span>Naught waked, save one lone eagle, nigh the sun,</span>
+      </div>
+      <div class="line">
+        <span>With wings, unbaffled, beating</span>
+      </div>
+      <div class="line">
+        <span>Up the blue, unclouded heavens.</span>
+      </div>
+      <div class="line">
+        <span>A dreamless, suave security</span>
+      </div>
+      <div class="line">
+        <span>Seemed brooding o'er the valley's golden slumber,</span>
+      </div>
+      <div class="line">
+        <span>Whence rang or flashed no hint of lurking peril.</span>
+      </div>
+      <div class="line">
+        <span>I dropped to earth,</span>
+      </div>
+      <div class="line">
+        <span>And crouching low,</span>
+      </div>
+      <div class="line">
+        <span>I stole yet nearer</span>
+      </div>
+      <div class="line">
+        <span>Through the brake:</span>
+      </div>
+      <div class="line">
+        <span>Till, drawing nigh the cavern-mouth,</span>
+      </div>
+      <div class="line">
+        <span>I heard the sound of half-hushed sobbing:</span>
+      </div>
+      <div class="line">
+        <span>And then I saw, within the gloom,</span>
+      </div>
+      <div class="line">
+        <span>My mother and my sisters clustering round</span>
+      </div>
+      <div class="line">
+        <span>My father's body, lying stark and dead,</span>
+      </div>
+      <div class="line">
+        <span>A spear-wound in his breast.</span>
+      </div>
+      <div class="line">
+        <span>And as I crept to them, they did not hear me,</span>
+      </div>
+      <div class="line">
+        <span>Nor ever lift their heads;</span>
+      </div>
+      <div class="line">
+        <span>But, shuddering, crouched together,</span>
+      </div>
+      <div class="line">
+        <span>With drooping breasts half-hid in falling hair,</span>
+      </div>
+      <div class="line">
+        <span>By that familiar form</span>
+      </div>
+      <div class="line">
+        <span>In such strange slumber bound.</span>
+      </div>
+      <div class="line">
+        <span>Only the baby, on her shoulder slung,</span>
+      </div>
+      <div class="line">
+        <span>Saw me, and crowed me greeting,</span>
+      </div>
+      <div class="line">
+        <span>As I stooped down to touch my weeping mother,</span>
+      </div>
+      <div class="line">
+        <span>Who, turning suddenly,</span>
+      </div>
+      <div class="line">
+        <span>With wild tear-fevered eyes;</span>
+      </div>
+      <div class="line">
+        <span>Arose with whispered warning;</span>
+      </div>
+      <div class="line">
+        <span>But, even then, too late.</span>
+      </div>
+      <div class="line">
+        <span>Already, from behind,</span>
+      </div>
+      <div class="line">
+        <span>Around my throat</span>
+      </div>
+      <div class="line">
+        <span>An arm was flung;</span>
+      </div>
+      <div class="line">
+        <span>And heavily I fell:</span>
+      </div>
+      <div class="line">
+        <span>Yet, with a desperate wrench,</span>
+      </div>
+      <div class="line">
+        <span>I slipped the clutch of my assailant:</span>
+      </div>
+      <div class="line">
+        <span>And picking up a slingstone that lay handy,</span>
+      </div>
+      <div class="line">
+        <span>I crashed it through his helm;</span>
+      </div>
+      <div class="line">
+        <span>And dead he dropped.</span>
+      </div>
+      <div class="line">
+        <span>And now upon me all his fellows thronged,</span>
+      </div>
+      <div class="line">
+        <span>Like hounds about an antelope;</span>
+      </div>
+      <div class="line">
+        <span>And gripped my naked limbs,</span>
+      </div>
+      <div class="line">
+        <span>And dragged me down,</span>
+      </div>
+      <div class="line">
+        <span>A struggling beast, among them:</span>
+      </div>
+      <div class="line">
+        <span>And desperately I fought,</span>
+      </div>
+      <div class="line">
+        <span>As fights the boar at bay,</span>
+      </div>
+      <div class="line">
+        <span>When all the yelling pack,</span>
+      </div>
+      <div class="line">
+        <span>With lathered lips, and white teeth gnashing,</span>
+      </div>
+      <div class="line">
+        <span>Is closing in upon him;</span>
+      </div>
+      <div class="line">
+        <span>And in his quivering flank, and gasping throat,</span>
+      </div>
+      <div class="line">
+        <span>He feels the fangs of death:</span>
+      </div>
+      <div class="line">
+        <span>Till, overcome at last,</span>
+      </div>
+      <div class="line">
+        <span>They bound me hand and foot,</span>
+      </div>
+      <div class="line">
+        <span>With knotted, leathern thongs;</span>
+      </div>
+      <div class="line">
+        <span>And dragged me out to where, beneath the trees,</span>
+      </div>
+      <div class="line">
+        <span>Trussed in like manner, with defiant eyes,</span>
+      </div>
+      <div class="line">
+        <span>My brothers lay, already, side by side.</span>
+      </div>
+      <div class="line">
+        <span>They laid me in the shade;</span>
+      </div>
+      <div class="line">
+        <span>And flicked my wincing spirit</span>
+      </div>
+      <div class="line">
+        <span>With laughter and light words:</span>
+      </div>
+      <div class="line">
+        <span>"Now is the roe-buck taken!"</span>
+      </div>
+      <div class="line">
+        <span>Then another,</span>
+      </div>
+      <div class="line">
+        <span>On whose dark, sullen face there burned a livid weal</span>
+      </div>
+      <div class="line">
+        <span>"A buck in flight's a panther brought to bay!"</span>
+      </div>
+      <div class="line">
+        <span>And then his fellow:</span>
+      </div>
+      <div class="line">
+        <span>"True enough! and yet,</span>
+      </div>
+      <div class="line">
+        <span>For such young thews they give good gold--</span>
+      </div>
+      <div class="line">
+        <span>They give good gold in Babylon!"</span>
+      </div>
+      <div class="line">
+        <span>And, laughing thus, they left us,</span>
+      </div>
+      <div class="line">
+        <span>To lie through hours of aching silence,</span>
+      </div>
+      <div class="line">
+        <span>Until, at length, the cool of evening fell;</span>
+      </div>
+      <div class="line">
+        <span>When they returned from slumber;</span>
+      </div>
+      <div class="line">
+        <span>And loosed the ankle-cords that we might stand;</span>
+      </div>
+      <div class="line">
+        <span>And bade our mother feed us;</span>
+      </div>
+      <div class="line">
+        <span>And she, with tender fingers, held</span>
+      </div>
+      <div class="line">
+        <span>The milk-bowl to our parching lips;</span>
+      </div>
+      <div class="line">
+        <span>And thrust dried dates betwixt our teeth;</span>
+      </div>
+      <div class="line">
+        <span>And wept, to see us standing there,</span>
+      </div>
+      <div class="line">
+        <span>With helpless hands, before her.</span>
+      </div>
+      <div class="line">
+        <span>Then, bringing out their mules, they saddled them;</span>
+      </div>
+      <div class="line">
+        <span>And tied us to the girths on either hand.</span>
+      </div>
+      <div class="line">
+        <span>They drove my weeping sisters from the cavern;</span>
+      </div>
+      <div class="line">
+        <span>And sought to tear my mother from her home;</span>
+      </div>
+      <div class="line">
+        <span>But she escaped them;</span>
+      </div>
+      <div class="line">
+        <span>And they let her bide</span>
+      </div>
+      <div class="line">
+        <span>Amid the ruins of her life,</span>
+      </div>
+      <div class="line">
+        <span>Whose light had dropped, so suddenly,</span>
+      </div>
+      <div class="line">
+        <span>From out the highest heavens:</span>
+      </div>
+      <div class="line">
+        <span>And, when I turned to look on her,</span>
+      </div>
+      <div class="line">
+        <span>And win from her a last farewell,</span>
+      </div>
+      <div class="line">
+        <span>I saw her, sitting desolate betwixt</span>
+      </div>
+      <div class="line">
+        <span>Her silent husband and her wailing babe,</span>
+      </div>
+      <div class="line">
+        <span>With still, strange eyes,</span>
+      </div>
+      <div class="line">
+        <span>That stared upon the dead, unseeing,</span>
+      </div>
+      <div class="line">
+        <span>While her own children went from her,</span>
+      </div>
+      <div class="line">
+        <span>Scarce knowing that they left her, nevermore</span>
+      </div>
+      <div class="line">
+        <span>To look upon her face.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>Thus, we set out, as over</span>
+      </div>
+      <div class="line">
+        <span>The darkening, Southern crags</span>
+      </div>
+      <div class="line">
+        <span>The new moon's keen, curved blade was thrust:</span>
+      </div>
+      <div class="line">
+        <span>My sisters trooping on before us,</span>
+      </div>
+      <div class="line">
+        <span>Like a drove of young gazelles,</span>
+      </div>
+      <div class="line">
+        <span>Which, in the dead of night,</span>
+      </div>
+      <div class="line">
+        <span>With pards in leash, and torches flaring,</span>
+      </div>
+      <div class="line">
+        <span>The hunters have encompassed.</span>
+      </div>
+      <div class="line">
+        <span>They moved with timid steps,</span>
+      </div>
+      <div class="line">
+        <span>And little runs;</span>
+      </div>
+      <div class="line">
+        <span>Stumbling, with stifled cries;</span>
+      </div>
+      <div class="line">
+        <span>And starting, panic-shot,</span>
+      </div>
+      <div class="line">
+        <span>From every lurking shadow--</span>
+      </div>
+      <div class="line">
+        <span>Behind them, terror's lifted lash:</span>
+      </div>
+      <div class="line">
+        <span>Before them, ever crouching,</span>
+      </div>
+      <div class="line">
+        <span>The horror of the unknown night--</span>
+      </div>
+      <div class="line">
+        <span>While, as they moved before us,</span>
+      </div>
+      <div class="line">
+        <span>The moonlight shivered off their shrinking shoulders</span>
+      </div>
+      <div class="line">
+        <span>And naked, glancing limbs,</span>
+      </div>
+      <div class="line">
+        <span>In shimmering, strange beauty.</span>
+      </div>
+      <div class="line">
+        <span>And closely on their heels,</span>
+      </div>
+      <div class="line">
+        <span>I, with my brothers, foremost in the file,</span>
+      </div>
+      <div class="line">
+        <span>Marched, tethered 'twixt the plodding beasts,</span>
+      </div>
+      <div class="line">
+        <span>Whose stolid riders sat,</span>
+      </div>
+      <div class="line">
+        <span>Each with his javelin on the pummel couched,</span>
+      </div>
+      <div class="line">
+        <span>In watchful silence, with dark eyes alert.</span>
+      </div>
+      <div class="line">
+        <span>And once, nigh driven crazy</span>
+      </div>
+      <div class="line">
+        <span>By the tugging of the thongs,</span>
+      </div>
+      <div class="line">
+        <span>I sprang into the air,</span>
+      </div>
+      <div class="line">
+        <span>As down a rocky steep we scrambled;</span>
+      </div>
+      <div class="line">
+        <span>And strove to burst the galling bonds,</span>
+      </div>
+      <div class="line">
+        <span>Or hurl my guards on one another;</span>
+      </div>
+      <div class="line">
+        <span>But, all too sure of foot, the beasts,</span>
+      </div>
+      <div class="line">
+        <span>And too securely girths and cords</span>
+      </div>
+      <div class="line">
+        <span>Held me, and I stumbled.</span>
+      </div>
+      <div class="line">
+        <span>Instantly a thong</span>
+      </div>
+      <div class="line">
+        <span>Struck my wincing shoulders,</span>
+      </div>
+      <div class="line">
+        <span>Blow on thudding blow.</span>
+      </div>
+      <div class="line">
+        <span>I bit my lips; and strode on silently;</span>
+      </div>
+      <div class="line">
+        <span>Nor fought again for freedom.</span>
+      </div>
+      <div class="line">
+        <span>So on we journeyed through the night,</span>
+      </div>
+      <div class="line">
+        <span>And down familiar mountain-tracks,</span>
+      </div>
+      <div class="line">
+        <span>Through deep, dark forest,</span>
+      </div>
+      <div class="line">
+        <span>Ever down and down;</span>
+      </div>
+      <div class="line">
+        <span>Fording the streams, whose moon-bright waters flowed,</span>
+      </div>
+      <div class="line">
+        <span>In eddies of delicious, aching cool,</span>
+      </div>
+      <div class="line">
+        <span>About our weary thighs.</span>
+      </div>
+      <div class="line">
+        <span>And, once, when in mid-torrent,</span>
+      </div>
+      <div class="line">
+        <span>That swirled, girth-high about the plunging beasts,</span>
+      </div>
+      <div class="line">
+        <span>A startled otter, glancing</span>
+      </div>
+      <div class="line">
+        <span>Before their very hoofs,</span>
+      </div>
+      <div class="line">
+        <span>Affrighted them; and, rearing,</span>
+      </div>
+      <div class="line">
+        <span>With blind and desperate floundering,</span>
+      </div>
+      <div class="line">
+        <span>They nearly dragged us down to death:</span>
+      </div>
+      <div class="line">
+        <span>And, ere we righted,</span>
+      </div>
+      <div class="line">
+        <span>With a fearful cry,</span>
+      </div>
+      <div class="line">
+        <span>My eldest sister from the bevy broke;</span>
+      </div>
+      <div class="line">
+        <span>And struck down-stream</span>
+      </div>
+      <div class="line">
+        <span>With wild arm lashing desperately,</span>
+      </div>
+      <div class="line">
+        <span>Until the current caught her;</span>
+      </div>
+      <div class="line">
+        <span>And she sank, to rise no more.</span>
+      </div>
+      <div class="line">
+        <span>And on again we travelled,</span>
+      </div>
+      <div class="line">
+        <span>Down through the darkling woodlands:</span>
+      </div>
+      <div class="line">
+        <span>And once I saw green, burning eyes,</span>
+      </div>
+      <div class="line">
+        <span>Where, on a low-hung bough,</span>
+      </div>
+      <div class="line">
+        <span>A night-black panther crouched,</span>
+      </div>
+      <div class="line">
+        <span>As though to pounce upon my sisters;</span>
+      </div>
+      <div class="line">
+        <span>But, the sudden crack of whips,</span>
+      </div>
+      <div class="line">
+        <span>Startling him, he snarled;</span>
+      </div>
+      <div class="line">
+        <span>And turned with lashing tail,</span>
+      </div>
+      <div class="line">
+        <span>Crashing through dense brushwood.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>When, once, again we came unto a clearing,</span>
+      </div>
+      <div class="line">
+        <span>The night was near its noon:</span>
+      </div>
+      <div class="line">
+        <span>And all the vales that lay before us</span>
+      </div>
+      <div class="line">
+        <span>Were filled with moving, moonlit mists,</span>
+      </div>
+      <div class="line">
+        <span>That seemed phantasmal waters</span>
+      </div>
+      <div class="line">
+        <span>Of that enchanted world,</span>
+      </div>
+      <div class="line">
+        <span>Where we, in dreams, sail over still lagoons,</span>
+      </div>
+      <div class="line">
+        <span>Throughout eternal night,</span>
+      </div>
+      <div class="line">
+        <span>And under unknown stars.</span>
+      </div>
+      <div class="line">
+        <span>Still, on we fared, unresting,</span>
+      </div>
+      <div class="line">
+        <span>Until the low moon paled;</span>
+      </div>
+      <div class="line">
+        <span>When, halting on a mountain-spur,</span>
+      </div>
+      <div class="line">
+        <span>We first looked down on Babylon,</span>
+      </div>
+      <div class="line">
+        <span>Far in the dreaming West,</span>
+      </div>
+      <div class="line">
+        <span>A cluster of dim towers,</span>
+      </div>
+      <div class="line">
+        <span>Scarce visible to wearied eyes.</span>
+      </div>
+      <div class="line">
+        <span>We camped within a sheltering cedar-grove;</span>
+      </div>
+      <div class="line">
+        <span>And all the day, beneath the level boughs,</span>
+      </div>
+      <div class="line">
+        <span>Upon the agelong-bedded needles lay,</span>
+      </div>
+      <div class="line">
+        <span>Half-slumbering, with fleeting, fretful dreams</span>
+      </div>
+      <div class="line">
+        <span>That could not quite forget the chafing cords,</span>
+      </div>
+      <div class="line">
+        <span>That held our arms in aching numbness:</span>
+      </div>
+      <div class="line">
+        <span>But, ere the noon, in sounder sleep I sank,</span>
+      </div>
+      <div class="line">
+        <span>Dreaming I floated on a still, deep pool,</span>
+      </div>
+      <div class="line">
+        <span>Beneath dark, overhanging branches;</span>
+      </div>
+      <div class="line">
+        <span>And seemed to feel upon my cheek</span>
+      </div>
+      <div class="line">
+        <span>The cool caress of waters;</span>
+      </div>
+      <div class="line">
+        <span>While, far above me, through the night of trees,</span>
+      </div>
+      <div class="line">
+        <span>Noon glimmered faintly as the glint of stars.</span>
+      </div>
+      <div class="line">
+        <span>As thus I lay, in indolent ecstasy,</span>
+      </div>
+      <div class="line">
+        <span>O'er me, suddenly, the waters</span>
+      </div>
+      <div class="line">
+        <span>Curved, and I was dragged,</span>
+      </div>
+      <div class="line">
+        <span>Down and down,</span>
+      </div>
+      <div class="line">
+        <span>Through gurgling deeps</span>
+      </div>
+      <div class="line">
+        <span>Of swirling, drowning darkness...</span>
+      </div>
+      <div class="line">
+        <span>When I awoke in terror;</span>
+      </div>
+      <div class="line">
+        <span>And strove to sit upright;</span>
+      </div>
+      <div class="line">
+        <span>But, tautly, with a jerk,</span>
+      </div>
+      <div class="line">
+        <span>The thongs that held me to my brothers,</span>
+      </div>
+      <div class="line">
+        <span>Dragged me back to earth.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>Awhile I lay, with staring eyes, awake,</span>
+      </div>
+      <div class="line">
+        <span>Watching a big, grey spider, crouched overhead,</span>
+      </div>
+      <div class="line">
+        <span>In ambush 'neath a twig, beside her web,</span>
+      </div>
+      <div class="line">
+        <span>Oft sallying out, to bind yet more securely,</span>
+      </div>
+      <div class="line">
+        <span>The half-entangled flies.</span>
+      </div>
+      <div class="line">
+        <span>And then, once more, I slumbered;</span>
+      </div>
+      <div class="line">
+        <span>And dreamed a face leant over me,</span>
+      </div>
+      <div class="line">
+        <span>More fair than any face</span>
+      </div>
+      <div class="line">
+        <span>My waking eyes had ever looked upon.</span>
+      </div>
+      <div class="line">
+        <span>Its beauty burned above me,</span>
+      </div>
+      <div class="line">
+        <span>Not dusky like my sisters' faces,</span>
+      </div>
+      <div class="line">
+        <span>But pale as the wan moon,</span>
+      </div>
+      <div class="line">
+        <span>Reflected in a flood</span>
+      </div>
+      <div class="line">
+        <span>Of darkly flowing waters,</span>
+      </div>
+      <div class="line">
+        <span>Or as the creaming froth,</span>
+      </div>
+      <div class="line">
+        <span>That, born amid the thunder of the fall,</span>
+      </div>
+      <div class="line">
+        <span>Floats on the river's bosom in the sunshine,</span>
+      </div>
+      <div class="line">
+        <span>Bubble after bubble,</span>
+      </div>
+      <div class="line">
+        <span>Perishing in air.</span>
+      </div>
+      <div class="line">
+        <span>So, a moment, over me,</span>
+      </div>
+      <div class="line">
+        <span>With frail and fleeting glimmer</span>
+      </div>
+      <div class="line">
+        <span>Of strange elusive, evanescent light,</span>
+      </div>
+      <div class="line">
+        <span>The holy vision hovered.</span>
+      </div>
+      <div class="line">
+        <span>And yet, whenever, with a fervent longing,</span>
+      </div>
+      <div class="line">
+        <span>I sought to look into the darkling eyes,</span>
+      </div>
+      <div class="line">
+        <span>The face would fade from me,</span>
+      </div>
+      <div class="line">
+        <span>As foam caught in an eddy:</span>
+      </div>
+      <div class="line">
+        <span>Until, at last, I wakened,</span>
+      </div>
+      <div class="line">
+        <span>And, wondering, saw a pale star gleaming</span>
+      </div>
+      <div class="line">
+        <span>Betwixt the cedar-branches.</span>
+      </div>
+      <div class="line">
+        <span>And soon our captors stirred:</span>
+      </div>
+      <div class="line">
+        <span>And we arose, to see</span>
+      </div>
+      <div class="line">
+        <span>The walls and towers of Babylon, dark</span>
+      </div>
+      <div class="line">
+        <span>Against the clear rose of the afterglow,</span>
+      </div>
+      <div class="line">
+        <span>Already in the surge of shadows caught,</span>
+      </div>
+      <div class="line">
+        <span>As night, beneath us, slowly Westward swept,</span>
+      </div>
+      <div class="line">
+        <span>Flooding the dreaming plain that lay before us,</span>
+      </div>
+      <div class="line">
+        <span>Vast, limitless, bewildering,</span>
+      </div>
+      <div class="line">
+        <span>And strange to mountain-eyes.</span>
+      </div>
+      <div class="line">
+        <span>As down the slope we went,</span>
+      </div>
+      <div class="line">
+        <span>And when, at last, we left behind</span>
+      </div>
+      <div class="line">
+        <span>The hills and singing waters,</span>
+      </div>
+      <div class="line">
+        <span>A vague, oppressive fear</span>
+      </div>
+      <div class="line">
+        <span>Of those dim, silent leagues of level land,</span>
+      </div>
+      <div class="line">
+        <span>Fell on me; and I almost seemed</span>
+      </div>
+      <div class="line">
+        <span>To bear upon my shoulders</span>
+      </div>
+      <div class="line">
+        <span>The vaster dome of overwhelming night;</span>
+      </div>
+      <div class="line">
+        <span>And, trembling like a child,</span>
+      </div>
+      <div class="line">
+        <span>I looked askance at my two captors,</span>
+      </div>
+      <div class="line">
+        <span>As they rode on in heedless silence,</span>
+      </div>
+      <div class="line">
+        <span>Their swarthy faces sharp</span>
+      </div>
+      <div class="line">
+        <span>Against the lucent sky.</span>
+      </div>
+      <div class="line">
+        <span>And then, once more,</span>
+      </div>
+      <div class="line">
+        <span>The old, familiar watchfires of the stars</span>
+      </div>
+      <div class="line">
+        <span>Brought courage to my bosom;</span>
+      </div>
+      <div class="line">
+        <span>And the young moon's brilliant horn</span>
+      </div>
+      <div class="line">
+        <span>Was exalted in the sky:</span>
+      </div>
+      <div class="line">
+        <span>And soon, the glooming wilderness</span>
+      </div>
+      <div class="line">
+        <span>Awoke with glittering waters,</span>
+      </div>
+      <div class="line">
+        <span>As a friendly wind sang unto me</span>
+      </div>
+      <div class="line">
+        <span>Among the swaying reeds:</span>
+      </div>
+      <div class="line">
+        <span>While, cloud on cloud,</span>
+      </div>
+      <div class="line">
+        <span>The snowy flocks of pelican</span>
+      </div>
+      <div class="line">
+        <span>Before our coming rose;</span>
+      </div>
+      <div class="line">
+        <span>And, as they swerved to Southward,</span>
+      </div>
+      <div class="line">
+        <span>The moonlight shivered off their flashing pinions.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>So, on we marched, till dawn, across the plain;</span>
+      </div>
+      <div class="line">
+        <span>And, on and on,</span>
+      </div>
+      <div class="line">
+        <span>Beneath the waxing moon,</span>
+      </div>
+      <div class="line">
+        <span>Each night we travelled Westward;</span>
+      </div>
+      <div class="line">
+        <span>Until, at last, we halted</span>
+      </div>
+      <div class="line">
+        <span>By the broad dull-gleaming flood</span>
+      </div>
+      <div class="line">
+        <span>Of mighty, roaring Tigris;</span>
+      </div>
+      <div class="line">
+        <span>And aroused from midnight slumber</span>
+      </div>
+      <div class="line">
+        <span>The surly, grumbling ferrymen,</span>
+      </div>
+      <div class="line">
+        <span>And crossed the swollen waters</span>
+      </div>
+      <div class="line">
+        <span>Upon the great, skin rafts:</span>
+      </div>
+      <div class="line">
+        <span>Then on again we fared,</span>
+      </div>
+      <div class="line">
+        <span>Until the far, dim towers soared in the dawnlight</span>
+      </div>
+      <div class="line">
+        <span>And we encamped beside a stream,</span>
+      </div>
+      <div class="line">
+        <span>Beneath dry, rustling palms.</span>
+      </div>
+      <div class="line">
+        <span>And heavily I slumbered:</span>
+      </div>
+      <div class="line">
+        <span>And only wakened once, at noon,</span>
+      </div>
+      <div class="line">
+        <span>When, lifting up my head,</span>
+      </div>
+      <div class="line">
+        <span>I saw the towers of Babylon, burning blue,</span>
+      </div>
+      <div class="line">
+        <span>Far off, in the blind heat:</span>
+      </div>
+      <div class="line">
+        <span>And slept again, till sunset,</span>
+      </div>
+      <div class="line">
+        <span>When we took our Westward course</span>
+      </div>
+      <div class="line">
+        <span>Along the low bank of a broad canal,</span>
+      </div>
+      <div class="line">
+        <span>That glimmered wanly 'neath a moonless sky.</span>
+      </div>
+      <div class="line">
+        <span>Higher, and higher still,</span>
+      </div>
+      <div class="line">
+        <span>As we drew slowly nearer,</span>
+      </div>
+      <div class="line">
+        <span>Arose the vasty walls and serried towers,</span>
+      </div>
+      <div class="line">
+        <span>That seemed to thrust among the stars,</span>
+      </div>
+      <div class="line">
+        <span>And on embattled summits bear the night,</span>
+      </div>
+      <div class="line">
+        <span>Unbowed beneath their burden,</span>
+      </div>
+      <div class="line">
+        <span>As easily as, with unruffled brows,</span>
+      </div>
+      <div class="line">
+        <span>And limber, upright bodies,</span>
+      </div>
+      <div class="line">
+        <span>The village-daughters carry</span>
+      </div>
+      <div class="line">
+        <span>At eve the brimming pitchers,</span>
+      </div>
+      <div class="line">
+        <span>Poised upon their heads.</span>
+      </div>
+      <div class="line">
+        <span>And when, above us, the wide-looming walls</span>
+      </div>
+      <div class="line">
+        <span>Shut out the Western stars;</span>
+      </div>
+      <div class="line">
+        <span>Beneath their shade, at midnight, we encamped,</span>
+      </div>
+      <div class="line">
+        <span>To await till dawn should open</span>
+      </div>
+      <div class="line">
+        <span>The city gates for us.</span>
+      </div>
+      <div class="line">
+        <span>That night we did not sleep,</span>
+      </div>
+      <div class="line">
+        <span>But, crouched upon the ground,</span>
+      </div>
+      <div class="line">
+        <span>We watched the moon rise over Babylon,</span>
+      </div>
+      <div class="line">
+        <span>Till, far behind us, o'er the glittering waste,</span>
+      </div>
+      <div class="line">
+        <span>Was flung the wall's huge shadow,</span>
+      </div>
+      <div class="line">
+        <span>And the moving shades of sentries,</span>
+      </div>
+      <div class="line">
+        <span>Who, unseen above our heads,</span>
+      </div>
+      <div class="line">
+        <span>Paced through the night incessantly.</span>
+      </div>
+      <div class="line">
+        <span>Thus long we sat, hushed with awed expectation,</span>
+      </div>
+      <div class="line">
+        <span>And gazing o'er the plain that we had travelled,</span>
+      </div>
+      <div class="line">
+        <span>As, gradually, the climbing moon,</span>
+      </div>
+      <div class="line">
+        <span>Escaping from the clustering towers,</span>
+      </div>
+      <div class="line">
+        <span>Revealed far-gleaming waters,</span>
+      </div>
+      <div class="line">
+        <span>And the sharp, shrill cry of owls,</span>
+      </div>
+      <div class="line">
+        <span>Sweeping by on noiseless plumes,</span>
+      </div>
+      <div class="line">
+        <span>Assailed the vasty silence,</span>
+      </div>
+      <div class="line">
+        <span>Shivering off like darts</span>
+      </div>
+      <div class="line">
+        <span>From some impenetrable shield.</span>
+      </div>
+      <div class="line">
+        <span>And, as we waited,</span>
+      </div>
+      <div class="line">
+        <span>Sometimes, fearfully,</span>
+      </div>
+      <div class="line">
+        <span>I gazed up those stupendous, soaring walls</span>
+      </div>
+      <div class="line">
+        <span>Of that great, slumbering city, wondering</span>
+      </div>
+      <div class="line">
+        <span>What doom behind the bastioned ramparts slept,</span>
+      </div>
+      <div class="line">
+        <span>What destiny, beneath the brooding night,</span>
+      </div>
+      <div class="line">
+        <span>Awaited me beyond the brazen gates.</span>
+      </div>
+      <div class="line">
+        <span>But, naught the blind, indifferent stars revealed,</span>
+      </div>
+      <div class="line">
+        <span>Though towards the long night's ending,</span>
+      </div>
+      <div class="line">
+        <span>Half-dazed with gazing up that aching height,</span>
+      </div>
+      <div class="line">
+        <span>A drowsiness fell over me,</span>
+      </div>
+      <div class="line">
+        <span>And in a restless waking-trance I lay,</span>
+      </div>
+      <div class="line">
+        <span>Dreaming that Life and Death before me stood.</span>
+      </div>
+      <div class="line">
+        <span>And, as each thrust towards me a shrouded cup,</span>
+      </div>
+      <div class="line">
+        <span>Implacable silence bade me choose and drink.</span>
+      </div>
+      <div class="line">
+        <span>But, as I stretched a blind, uncertain hand</span>
+      </div>
+      <div class="line">
+        <span>To take the cup of death,</span>
+      </div>
+      <div class="line">
+        <span>I wakened, and dawn trembled,</span>
+      </div>
+      <div class="line">
+        <span>At last, beyond the Eastern hills,</span>
+      </div>
+      <div class="line">
+        <span>And, star by star, night failed;</span>
+      </div>
+      <div class="line">
+        <span>And eagerly the sun leapt up the sky,</span>
+      </div>
+      <div class="line">
+        <span>And, as his flashing rays</span>
+      </div>
+      <div class="line">
+        <span>Smote kindling towers and flaming gates of brass,</span>
+      </div>
+      <div class="line">
+        <span>Across the reedy moat</span>
+      </div>
+      <div class="line">
+        <span>A clattering drawbridge fell,</span>
+      </div>
+      <div class="line">
+        <span>And wide the glittering portals slowly swung:</span>
+      </div>
+      <div class="line">
+        <span>And there came streaming out in slow procession</span>
+      </div>
+      <div class="line">
+        <span>A sleepy caravan of slouching camels,</span>
+      </div>
+      <div class="line">
+        <span>Groaning and grumbling as they strode along</span>
+      </div>
+      <div class="line">
+        <span>Beneath their mountainous burdens,</span>
+      </div>
+      <div class="line">
+        <span>Upon whose swaying summits,</span>
+      </div>
+      <div class="line">
+        <span>Impassively, the blue-robed merchants sat.</span>
+      </div>
+      <div class="line">
+        <span>They passed us slowly by,</span>
+      </div>
+      <div class="line">
+        <span>And then we took the bridge,</span>
+      </div>
+      <div class="line">
+        <span>And, while our captors parleyed with the guards,</span>
+      </div>
+      <div class="line">
+        <span>Who stood, on either hand,</span>
+      </div>
+      <div class="line">
+        <span>With naked swords,</span>
+      </div>
+      <div class="line">
+        <span>I turned my head,</span>
+      </div>
+      <div class="line">
+        <span>And saw for the last time, far Eastward,</span>
+      </div>
+      <div class="line">
+        <span>The cold, snow-brilliant peaks,</span>
+      </div>
+      <div class="line">
+        <span>Beyond my dim, blue, native hills.</span>
+      </div>
+      <div class="line">
+        <span>And, as I looked, my thoughts flew homeward,</span>
+      </div>
+      <div class="line">
+        <span>And I, one dreaming moment,</span>
+      </div>
+      <div class="line">
+        <span>Stood by my mourning mother in the cavern</span>
+      </div>
+      <div class="line">
+        <span>Of desolation, looking on the dead.</span>
+      </div>
+      <div class="line">
+        <span>And then, between the brazen gate-posts,</span>
+      </div>
+      <div class="line">
+        <span>And underneath the brazen lintel,</span>
+      </div>
+      <div class="line">
+        <span>At last we entered Babylon.</span>
+      </div>
+      <div class="line">
+        <span>Before us, yet another wall arose,</span>
+      </div>
+      <div class="line">
+        <span>And, turning sharply</span>
+      </div>
+      <div class="line">
+        <span>Down a narrow way,</span>
+      </div>
+      <div class="line">
+        <span>The living breath of heaven seemed shut from us</span>
+      </div>
+      <div class="line">
+        <span>As though beneath the beetling crags</span>
+      </div>
+      <div class="line">
+        <span>Of some deep mountain-gorge--</span>
+      </div>
+      <div class="line">
+        <span>By cliffs of wall, on either hand,</span>
+      </div>
+      <div class="line">
+        <span>That soared up to the narrow sky,</span>
+      </div>
+      <div class="line">
+        <span>Which with dim lustre lit</span>
+      </div>
+      <div class="line">
+        <span>The shimmering surface of enamelled brick,</span>
+      </div>
+      <div class="line">
+        <span>Whereon, through giant groves,</span>
+      </div>
+      <div class="line">
+        <span>Blue-coated hunters chased the boar,</span>
+      </div>
+      <div class="line">
+        <span>Or 'loosed red-tasselled falcon</span>
+      </div>
+      <div class="line">
+        <span>After flying crane.</span>
+      </div>
+      <div class="line">
+        <span>But soon we reached another gate,</span>
+      </div>
+      <div class="line">
+        <span>Sword-guarded, and we entered,</span>
+      </div>
+      <div class="line">
+        <span>And plunged into the traffic</span>
+      </div>
+      <div class="line">
+        <span>Of clamorous merchantmen,</span>
+      </div>
+      <div class="line">
+        <span>Speeding their business ere the heat of day.</span>
+      </div>
+      <div class="line">
+        <span>And as we jostled, slowly,</span>
+      </div>
+      <div class="line">
+        <span>Through bewildering bazaars,</span>
+      </div>
+      <div class="line">
+        <span>The porters and the idler wayfarers</span>
+      </div>
+      <div class="line">
+        <span>All turned to look upon our shame,</span>
+      </div>
+      <div class="line">
+        <span>With cold, unpitying eyes,</span>
+      </div>
+      <div class="line">
+        <span>And indolent, gaping mouths,</span>
+      </div>
+      <div class="line">
+        <span>Or jested with our captors,</span>
+      </div>
+      <div class="line">
+        <span>Until we left the busier thoroughfares,</span>
+      </div>
+      <div class="line">
+        <span>And walked through groves of cypress and of ilex,</span>
+      </div>
+      <div class="line">
+        <span>Where not a sound or rumour troubled</span>
+      </div>
+      <div class="line">
+        <span>The silence of the dark-plumed boughs</span>
+      </div>
+      <div class="line">
+        <span>And glimmering deeps of peace,</span>
+      </div>
+      <div class="line">
+        <span>Save only the cool spurt of waters</span>
+      </div>
+      <div class="line">
+        <span>That, from a myriad unseen jets,</span>
+      </div>
+      <div class="line">
+        <span>Fretted the crystal airs of morning,</span>
+      </div>
+      <div class="line">
+        <span>And fell in frolic showers</span>
+      </div>
+      <div class="line">
+        <span>Of twinkling, rainbow drops,</span>
+      </div>
+      <div class="line">
+        <span>That plashed in unseen basins;</span>
+      </div>
+      <div class="line">
+        <span>And through the blaze of almond-orchards,</span>
+      </div>
+      <div class="line">
+        <span>Tremulous with blossom</span>
+      </div>
+      <div class="line">
+        <span>That flickered in a rosy, silken snow</span>
+      </div>
+      <div class="line">
+        <span>Of falling petals over us,</span>
+      </div>
+      <div class="line">
+        <span>And wreathed about our feet</span>
+      </div>
+      <div class="line">
+        <span>In soft and scented drifts;</span>
+      </div>
+      <div class="line">
+        <span>Beneath pomegranate trees in young, green leaf,</span>
+      </div>
+      <div class="line">
+        <span>And through vast gardens, glowing with strange flowers,</span>
+      </div>
+      <div class="line">
+        <span>Such as no April kindled into bloom</span>
+      </div>
+      <div class="line">
+        <span>Among the valleys of my native hills.</span>
+      </div>
+      <div class="line">
+        <span>We came unto a court of many fountains,</span>
+      </div>
+      <div class="line">
+        <span>Where, leaping off their jaded mules,</span>
+      </div>
+      <div class="line">
+        <span>Our captors loosed the thongs that held us,</span>
+      </div>
+      <div class="line">
+        <span>But left our wrists still bound.</span>
+      </div>
+      <div class="line">
+        <span>And one with great clay pitchers came,</span>
+      </div>
+      <div class="line">
+        <span>And over our hot bodies, travel-stained,</span>
+      </div>
+      <div class="line">
+        <span>Poured out cool, cleansing waters</span>
+      </div>
+      <div class="line">
+        <span>In a gurgling, crystal stream,</span>
+      </div>
+      <div class="line">
+        <span>And flung coarse robes of indigo</span>
+      </div>
+      <div class="line">
+        <span>About our naked shoulders.</span>
+      </div>
+      <div class="line">
+        <span>And here we left behind us</span>
+      </div>
+      <div class="line">
+        <span>The maidens and the younger boys,</span>
+      </div>
+      <div class="line">
+        <span>And passing through a gateway,</span>
+      </div>
+      <div class="line">
+        <span>Came out upon a busy wharf,</span>
+      </div>
+      <div class="line">
+        <span>Where, southward, midway through the city,</span>
+      </div>
+      <div class="line">
+        <span>The broad Euphrates flows,</span>
+      </div>
+      <div class="line">
+        <span>His dark flood thronged with merchant-dhows,</span>
+      </div>
+      <div class="line">
+        <span>And fishing-boats of reed and bitumen,</span>
+      </div>
+      <div class="line">
+        <span>Piled high with glistering barbel, freshly-caught;</span>
+      </div>
+      <div class="line">
+        <span>And foreign craft, with many-coloured sails,</span>
+      </div>
+      <div class="line">
+        <span>And laden deep with precious merchandise,</span>
+      </div>
+      <div class="line">
+        <span>That, over wide, bewildering waters,</span>
+      </div>
+      <div class="line">
+        <span>Across the perilous world,</span>
+      </div>
+      <div class="line">
+        <span>The adventurous, dark-bearded mariners,</span>
+      </div>
+      <div class="line">
+        <span>Who swear by unknown gods in alien tongues,</span>
+      </div>
+      <div class="line">
+        <span>Bring ever to the gates of Babylon.</span>
+      </div>
+      <div class="line">
+        <span>We crossed the drawbridge, round whose granite piers</span>
+      </div>
+      <div class="line">
+        <span>Swirled strong, Spring-swollen waters,</span>
+      </div>
+      <div class="line">
+        <span>Loud and tawny,</span>
+      </div>
+      <div class="line">
+        <span>And, through great brazen portals,</span>
+      </div>
+      <div class="line">
+        <span>Passed within the palace gates,</span>
+      </div>
+      <div class="line">
+        <span>When first I saw afar the hanging-gardens,</span>
+      </div>
+      <div class="line">
+        <span>Arch on arch,</span>
+      </div>
+      <div class="line">
+        <span>And tier on tier,</span>
+      </div>
+      <div class="line">
+        <span>Against a glowing sky.</span>
+      </div>
+      <div class="line">
+        <span>Two strapping Nubians, like young giants</span>
+      </div>
+      <div class="line">
+        <span>Hewn from blue-black marble</span>
+      </div>
+      <div class="line">
+        <span>By some immortal hand in immemorial ages,</span>
+      </div>
+      <div class="line">
+        <span>Led us slowly onward.</span>
+      </div>
+      <div class="line">
+        <span>The dappled pard-skins, slung across their shoulders,</span>
+      </div>
+      <div class="line">
+        <span>Scarcely hid the ox-like thews,</span>
+      </div>
+      <div class="line">
+        <span>Beneath the dark skin rippling,</span>
+      </div>
+      <div class="line">
+        <span>As they strode along before us.</span>
+      </div>
+      <div class="line">
+        <span>Through courts of alabaster,</span>
+      </div>
+      <div class="line">
+        <span>And painted corridors,</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>And chambers fair with flowery tapestries</span>
+      </div>
+      <div class="line">
+        <span>They led us, wondering, till at last we came</span>
+      </div>
+      <div class="line">
+        <span>Into a vast, dim hall of glimmering gold,</span>
+      </div>
+      <div class="line">
+        <span>The end of all our journeying.</span>
+      </div>
+      <div class="line">
+        <span>And, as we halted on the threshold,</span>
+      </div>
+      <div class="line">
+        <span>My eyes could see but little for a moment,</span>
+      </div>
+      <div class="line">
+        <span>In the dusky, heavy air,</span>
+      </div>
+      <div class="line">
+        <span>Through the ceaseless cloud of incense,</span>
+      </div>
+      <div class="line">
+        <span>Rising from the smouldering braziers</span>
+      </div>
+      <div class="line">
+        <span>To the gold, grey-clouded dome,</span>
+      </div>
+      <div class="line">
+        <span>Tingling strangely in my nostrils,</span>
+      </div>
+      <div class="line">
+        <span>As I came from morning airs;</span>
+      </div>
+      <div class="line">
+        <span>Then slowly filling them with drowsy fume,</span>
+      </div>
+      <div class="line">
+        <span>When, looking up with half-dazed eyes,</span>
+      </div>
+      <div class="line">
+        <span>I saw the King upon his golden throne:</span>
+      </div>
+      <div class="line">
+        <span>And through my body</span>
+      </div>
+      <div class="line">
+        <span>Raged rebellious blood,</span>
+      </div>
+      <div class="line">
+        <span>In baffled riot beating</span>
+      </div>
+      <div class="line">
+        <span>At my corded wrists,</span>
+      </div>
+      <div class="line">
+        <span>As if to burst the galling bonds,</span>
+      </div>
+      <div class="line">
+        <span>That I might hurl that lean, swart face,</span>
+      </div>
+      <div class="line">
+        <span>So idly turning towards us,</span>
+      </div>
+      <div class="line">
+        <span>With thin curled lips,</span>
+      </div>
+      <div class="line">
+        <span>And cold, incurious eyes,</span>
+      </div>
+      <div class="line">
+        <span>To headlong death--</span>
+      </div>
+      <div class="line">
+        <span>Yea! even though I tumbled</span>
+      </div>
+      <div class="line">
+        <span>The towers of Babylon round about my head.</span>
+      </div>
+      <div class="line">
+        <span>And, when our captors bowed their foreheads low,</span>
+      </div>
+      <div class="line">
+        <span>Obsequious to the throne,</span>
+      </div>
+      <div class="line">
+        <span>I stood upright,</span>
+      </div>
+      <div class="line">
+        <span>And gazed my loathing on that listless form--</span>
+      </div>
+      <div class="line">
+        <span>The gay, embroidered robe,</span>
+      </div>
+      <div class="line">
+        <span>The golden cap, that prankt the crispèd locks,</span>
+      </div>
+      <div class="line">
+        <span>The short, square beard, new-oiled and barbered--</span>
+      </div>
+      <div class="line">
+        <span>But, in a flash,</span>
+      </div>
+      <div class="line">
+        <span>A heavy blow</span>
+      </div>
+      <div class="line">
+        <span>Fell on my head,</span>
+      </div>
+      <div class="line">
+        <span>And struck me to my knees</span>
+      </div>
+      <div class="line">
+        <span>Before the sleek, indifferent king.</span>
+      </div>
+      <div class="line">
+        <span>And then, on either hand,</span>
+      </div>
+      <div class="line">
+        <span>With gripping palms upon my shoulders set,</span>
+      </div>
+      <div class="line">
+        <span>The Nubians towered above me</span>
+      </div>
+      <div class="line">
+        <span>Like mighty men of stone.</span>
+      </div>
+      <div class="line">
+        <span>And savagely I struggled,</span>
+      </div>
+      <div class="line">
+        <span>Half-stunned, to rise again;</span>
+      </div>
+      <div class="line">
+        <span>When, as I vainly battled</span>
+      </div>
+      <div class="line">
+        <span>In their unrelenting clutch,</span>
+      </div>
+      <div class="line">
+        <span>My eyes lit for the first time on the Queen,</span>
+      </div>
+      <div class="line">
+        <span>Who sat upon the daïs, by her lord</span>
+      </div>
+      <div class="line">
+        <span>Half-shadowed, on a throne of ivory,</span>
+      </div>
+      <div class="line">
+        <span>And all the hate died in me, as I saw</span>
+      </div>
+      <div class="line">
+        <span>The face that hovered over me in dream,</span>
+      </div>
+      <div class="line">
+        <span>When I had slept beneath the low-boughed cedar:</span>
+      </div>
+      <div class="line">
+        <span>The moon-pale brows, o'er which the clustered hair</span>
+      </div>
+      <div class="line">
+        <span>Hung like the smoke of torches, ruddy-gold,</span>
+      </div>
+      <div class="line">
+        <span>Against a canopy of peacock plumes:</span>
+      </div>
+      <div class="line">
+        <span>The deep brown, burning eyes,</span>
+      </div>
+      <div class="line">
+        <span>From which the soul looked on me in fierce pity.</span>
+      </div>
+      <div class="line">
+        <span>And, as I gazed on that exultant beauty,</span>
+      </div>
+      <div class="line">
+        <span>The hunter and the slayer of men</span>
+      </div>
+      <div class="line">
+        <span>Was slain within me instantly,</span>
+      </div>
+      <div class="line">
+        <span>And I forgot the mountains and my home;</span>
+      </div>
+      <div class="line">
+        <span>My desolate mother, and my father's death;</span>
+      </div>
+      <div class="line">
+        <span>My captive sisters ... and the thronèd King!</span>
+      </div>
+      <div class="line">
+        <span>I was as one, that moment,</span>
+      </div>
+      <div class="line">
+        <span>New-born into the world</span>
+      </div>
+      <div class="line">
+        <span>Full-limbed and thewed,</span>
+      </div>
+      <div class="line">
+        <span>Yet, with the wondering heart</span>
+      </div>
+      <div class="line">
+        <span>Of earth-bewildered childhood.</span>
+      </div>
+      <div class="line">
+        <span>And, unto me, it seemed</span>
+      </div>
+      <div class="line">
+        <span>That, as the Queen looked down on me,</span>
+      </div>
+      <div class="line">
+        <span>There stole into her eyes</span>
+      </div>
+      <div class="line">
+        <span>Some dim remembrance of old dreams,</span>
+      </div>
+      <div class="line">
+        <span>That in their brown depths flickered</span>
+      </div>
+      <div class="line">
+        <span>With strange, elusive light,</span>
+      </div>
+      <div class="line">
+        <span>Like stars that tremble in still forest-pools.</span>
+      </div>
+      <div class="line">
+        <span>One spake--</span>
+      </div>
+      <div class="line">
+        <span>I scarce knew whom, nor cared--</span>
+      </div>
+      <div class="line">
+        <span>And bade me choose,</span>
+      </div>
+      <div class="line">
+        <span>Before the throne,</span>
+      </div>
+      <div class="line">
+        <span>Between a life of slavery,</span>
+      </div>
+      <div class="line">
+        <span>Or merciful, swift death--</span>
+      </div>
+      <div class="line">
+        <span>Death, that but a moment since,</span>
+      </div>
+      <div class="line">
+        <span>I would have dragged, exulting, on me--</span>
+      </div>
+      <div class="line">
+        <span>And with my eyes still set on the Queen's face,</span>
+      </div>
+      <div class="line">
+        <span>I answered:</span>
+      </div>
+      <div class="line">
+        <span>"I will serve":</span>
+      </div>
+      <div class="line">
+        <span>And scarcely heeded that my wrists were loosed.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>And, huddled in a stifling hut,</span>
+      </div>
+      <div class="line">
+        <span>That night, among my fellows,</span>
+      </div>
+      <div class="line">
+        <span>I could not sleep at all:</span>
+      </div>
+      <div class="line">
+        <span>But gazed, wild-eyed, till dawn upon that face,</span>
+      </div>
+      <div class="line">
+        <span>Which hovered o'er me, like the moon of dreams;</span>
+      </div>
+      <div class="line">
+        <span>And seemed to draw the wandering tides of life</span>
+      </div>
+      <div class="line">
+        <span>In one vast wave, which ever strove</span>
+      </div>
+      <div class="line">
+        <span>To climb the heavens wherein she moved,</span>
+      </div>
+      <div class="line">
+        <span>That it might break in triumphing foam about her.</span>
+      </div>
+      <div class="line">
+        <span>Not then, nor ever afterwards,</span>
+      </div>
+      <div class="line">
+        <span>Was I a slave, among my fellow-slaves,</span>
+      </div>
+      <div class="line">
+        <span>But one, who, with mean drudgery,</span>
+      </div>
+      <div class="line">
+        <span>And daily penance serves</span>
+      </div>
+      <div class="line">
+        <span>Before a holy altar,</span>
+      </div>
+      <div class="line">
+        <span>That, sometimes, as he labours, his glad eyes</span>
+      </div>
+      <div class="line">
+        <span>May catch a gleam of the immortal light</span>
+      </div>
+      <div class="line">
+        <span>Within the secret shrine;</span>
+      </div>
+      <div class="line">
+        <span>Yea! and, maybe, shall look, one day, with trembling,</span>
+      </div>
+      <div class="line">
+        <span>On the bright-haired, imperishable god.</span>
+      </div>
+      <div class="line">
+        <span>And, even when, day after day,</span>
+      </div>
+      <div class="line">
+        <span>I bore the big reed-baskets, laden</span>
+      </div>
+      <div class="line">
+        <span>With wet clay, digged beyond the Western moat,</span>
+      </div>
+      <div class="line">
+        <span>Although I seemed to tread,</span>
+      </div>
+      <div class="line">
+        <span>As treads the ox that turns the water-wheel,</span>
+      </div>
+      <div class="line">
+        <span>A blindfold round of servitude,</span>
+      </div>
+      <div class="line">
+        <span>My quenchless vision ever burned before me:</span>
+      </div>
+      <div class="line">
+        <span>And when, in after days, I fed</span>
+      </div>
+      <div class="line">
+        <span>The roaring oven-furnaces;</span>
+      </div>
+      <div class="line">
+        <span>And toiled by them through sweltering days,</span>
+      </div>
+      <div class="line">
+        <span>Though over me, at times, would come</span>
+      </div>
+      <div class="line">
+        <span>Great longing for the hill-tops,</span>
+      </div>
+      <div class="line">
+        <span>And the noise of torrent-waters:</span>
+      </div>
+      <div class="line">
+        <span>Or when, more skilled, I moulded</span>
+      </div>
+      <div class="line">
+        <span>The damp clay into bricks;</span>
+      </div>
+      <div class="line">
+        <span>And spread the colour and the glaze;</span>
+      </div>
+      <div class="line">
+        <span>And in strength-giving heat of glowing kilns,</span>
+      </div>
+      <div class="line">
+        <span>I baked them durable,</span>
+      </div>
+      <div class="line">
+        <span>Clean-shaped, and meet for service:</span>
+      </div>
+      <div class="line">
+        <span>My vision flamed yet brighter;</span>
+      </div>
+      <div class="line">
+        <span>And unto me it seemed</span>
+      </div>
+      <div class="line">
+        <span>As if my gross and useless clay were burned</span>
+      </div>
+      <div class="line">
+        <span>In a white ecstasy of lustral fire,</span>
+      </div>
+      <div class="line">
+        <span>That, in the fashioning of the house of love,</span>
+      </div>
+      <div class="line">
+        <span>I might serve perfectly the builder's need.</span>
+      </div>
+      <div class="line">
+        <span>Thus, many months, I laboured;</span>
+      </div>
+      <div class="line">
+        <span>Till, one day, at the noontide hour of rest,</span>
+      </div>
+      <div class="line">
+        <span>I lay; and with a sharpened reed--</span>
+      </div>
+      <div class="line">
+        <span>As temple-scribes write down the holy lore</span>
+      </div>
+      <div class="line">
+        <span>On tablets of wet clay--</span>
+      </div>
+      <div class="line">
+        <span>On the moist earth beside me,</span>
+      </div>
+      <div class="line">
+        <span>I limned a young fawn, cropping</span>
+      </div>
+      <div class="line">
+        <span>A bunch of tender, overhanging leaves.</span>
+      </div>
+      <div class="line">
+        <span>And, as I slowly drew,</span>
+      </div>
+      <div class="line">
+        <span>I dreamt a little sadly of the days,</span>
+      </div>
+      <div class="line">
+        <span>When I, too, roamed, untethered,</span>
+      </div>
+      <div class="line">
+        <span>And drinking in, unquestioning,</span>
+      </div>
+      <div class="line">
+        <span>The sunshine and the air,</span>
+      </div>
+      <div class="line">
+        <span>And all the rapture of the earth that turns,</span>
+      </div>
+      <div class="line">
+        <span>New every morning to the wondering sun,</span>
+      </div>
+      <div class="line">
+        <span>Refashioned in still nights of starry dews:</span>
+      </div>
+      <div class="line">
+        <span>But one, the while, unseen of me,</span>
+      </div>
+      <div class="line">
+        <span>Watched my unconscious hand, approving:</span>
+      </div>
+      <div class="line">
+        <span>And I was set, next morning,</span>
+      </div>
+      <div class="line">
+        <span>Among the craftsmen, who so deftly limned</span>
+      </div>
+      <div class="line">
+        <span>The hunts and battles for the palace walls.</span>
+      </div>
+      <div class="line">
+        <span>And, happily, with them I lived</span>
+      </div>
+      <div class="line">
+        <span>A life of loving labour, for each line</span>
+      </div>
+      <div class="line">
+        <span>Flowed from the knowledge of my heart:</span>
+      </div>
+      <div class="line">
+        <span>I drew the startled ostrich</span>
+      </div>
+      <div class="line">
+        <span>Fleeing from the far-flung noose:</span>
+      </div>
+      <div class="line">
+        <span>The brindled lynx; the onaga</span>
+      </div>
+      <div class="line">
+        <span>In dewy-plashing flight;</span>
+      </div>
+      <div class="line">
+        <span>The bristling boar, at bay,</span>
+      </div>
+      <div class="line">
+        <span>Crouched in a deadly ring of threatening spears,</span>
+      </div>
+      <div class="line">
+        <span>With streaming nostrils, and red eyes ablaze;</span>
+      </div>
+      <div class="line">
+        <span>The striped hyæna; the gaunt, green-eyed wolf;</span>
+      </div>
+      <div class="line">
+        <span>The skulking jackal; the grey, brush-tailed fox;</span>
+      </div>
+      <div class="line">
+        <span>The hunting leopard and the antelope,</span>
+      </div>
+      <div class="line">
+        <span>In mid-chase tense,</span>
+      </div>
+      <div class="line">
+        <span>With every thew astrain;</span>
+      </div>
+      <div class="line">
+        <span>The dappled panther; the brown-eyed gazelle,</span>
+      </div>
+      <div class="line">
+        <span>Butting with black horns through the tangled brake</span>
+      </div>
+      <div class="line">
+        <span>The nimble hare, alert, with pricked-up ears;</span>
+      </div>
+      <div class="line">
+        <span>The tiger, crouched, with yellow eyes afire;</span>
+      </div>
+      <div class="line">
+        <span>The shaggy mountain-goat,</span>
+      </div>
+      <div class="line">
+        <span>Perched on the utmost crag,</span>
+      </div>
+      <div class="line">
+        <span>Against the afterglow of lucent ruby,</span>
+      </div>
+      <div class="line">
+        <span>Or, poised with bunching hoofs</span>
+      </div>
+      <div class="line">
+        <span>In mid-spring over a dark, yawning chasm;</span>
+      </div>
+      <div class="line">
+        <span>Or the black stallion, with his tameless troop,</span>
+      </div>
+      <div class="line">
+        <span>Fording a mountain-river in the dawn.</span>
+      </div>
+      <div class="line">
+        <span>And, sometimes, as we toiled,</span>
+      </div>
+      <div class="line">
+        <span>A terrible fleeting rapture</span>
+      </div>
+      <div class="line">
+        <span>Would come upon me, when the Queen</span>
+      </div>
+      <div class="line">
+        <span>Passed by us with her maidens;</span>
+      </div>
+      <div class="line">
+        <span>Or paused, a moment, gazing,</span>
+      </div>
+      <div class="line">
+        <span>With tranced and kindling eyes upon our labours:</span>
+      </div>
+      <div class="line">
+        <span>But never did I dare, at any time,</span>
+      </div>
+      <div class="line">
+        <span>To lift my eyes to hers,</span>
+      </div>
+      <div class="line">
+        <span>And look, as soul on soul,</span>
+      </div>
+      <div class="line">
+        <span>As on the day her beauty brought to birth</span>
+      </div>
+      <div class="line">
+        <span>The strange new life within me.</span>
+      </div>
+      <div class="line">
+        <span>In silence she would ever leave us;</span>
+      </div>
+      <div class="line">
+        <span>And ever with her passing perished</span>
+      </div>
+      <div class="line">
+        <span>The light and colour of my work;</span>
+      </div>
+      <div class="line">
+        <span>So that my heart failed, daunted by that glimpse</span>
+      </div>
+      <div class="line">
+        <span>Of the ever-living beauty.</span>
+      </div>
+      <div class="line">
+        <span>And, sometimes, I would carve in ruddy teak,</span>
+      </div>
+      <div class="line">
+        <span>Or ivory, from the Indian merchants bought,</span>
+      </div>
+      <div class="line">
+        <span>Or in the rare, black basalt, little beasts</span>
+      </div>
+      <div class="line">
+        <span>To please the idle fancies of the King;</span>
+      </div>
+      <div class="line">
+        <span>Or model in wet clay, and cast in bronze,</span>
+      </div>
+      <div class="line">
+        <span>Great bulls and lions for the palace-courts;</span>
+      </div>
+      <div class="line">
+        <span>Or carve him seals of lapis-lazuli,</span>
+      </div>
+      <div class="line">
+        <span>Of jasper, amethyst and serpentine,</span>
+      </div>
+      <div class="line">
+        <span>Chalcedony--carnelian, chrysoprase,</span>
+      </div>
+      <div class="line">
+        <span>Agate, sardonyx, and chalcedonyx--</span>
+      </div>
+      <div class="line">
+        <span>Green jade, and alabaster;</span>
+      </div>
+      <div class="line">
+        <span>Or cut in stones that flashed and flickered</span>
+      </div>
+      <div class="line">
+        <span>Like a glancing kingfisher,</span>
+      </div>
+      <div class="line">
+        <span>Or, in the sun-filled amber,</span>
+      </div>
+      <div class="line">
+        <span>The kite with broad wings spread,</span>
+      </div>
+      <div class="line">
+        <span>Or little fluttering doves that pecked</span>
+      </div>
+      <div class="line">
+        <span>A golden bunch of dates:</span>
+      </div>
+      <div class="line">
+        <span>And then of these in settings of fine gold</span>
+      </div>
+      <div class="line">
+        <span>Made fillets, rings and ear-rings.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>Thus, one day,</span>
+      </div>
+      <div class="line">
+        <span>Dreaming, as ever, of the Queen,</span>
+      </div>
+      <div class="line">
+        <span>I wrought a golden serpent for her hair:</span>
+      </div>
+      <div class="line">
+        <span>And when I brought it to the King, next morn,</span>
+      </div>
+      <div class="line">
+        <span>Where he sat brooding over chess,</span>
+      </div>
+      <div class="line">
+        <span>He bade me bear it to the Queen, myself,</span>
+      </div>
+      <div class="line">
+        <span>And so, I went unto her, where she sat,</span>
+      </div>
+      <div class="line">
+        <span>Among her singing maidens, at the loom,</span>
+      </div>
+      <div class="line">
+        <span>Weaving a silken web of Tyrian dye.</span>
+      </div>
+      <div class="line">
+        <span>I laid the trinket at her feet, in silence:</span>
+      </div>
+      <div class="line">
+        <span>And she arose, and set it in her hair,</span>
+      </div>
+      <div class="line">
+        <span>Whose living lustre far outshone</span>
+      </div>
+      <div class="line">
+        <span>The cold, dead metal I had fashioned,</span>
+      </div>
+      <div class="line">
+        <span>As she stood before me, dreaming,</span>
+      </div>
+      <div class="line">
+        <span>In her robe of flowing blue;</span>
+      </div>
+      <div class="line">
+        <span>Then looked a moment on me with kind eyes.</span>
+      </div>
+      <div class="line">
+        <span>And though she spoke no word,</span>
+      </div>
+      <div class="line">
+        <span>I turned, and fled, in trembling,</span>
+      </div>
+      <div class="line">
+        <span>Before the light that shivered through me,</span>
+      </div>
+      <div class="line">
+        <span>And struck my soul with shuddering ecstasy:</span>
+      </div>
+      <div class="line">
+        <span>And, still, through many days,</span>
+      </div>
+      <div class="line">
+        <span>Although I did not look again</span>
+      </div>
+      <div class="line">
+        <span>Upon those dreaming eyes,</span>
+      </div>
+      <div class="line">
+        <span>Their visionary light</span>
+      </div>
+      <div class="line">
+        <span>Within my soul, revealed eternity.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>Thus, have the mortal years</span>
+      </div>
+      <div class="line">
+        <span>Flowed onward to the perfect end--</span>
+      </div>
+      <div class="line">
+        <span>This day of days,</span>
+      </div>
+      <div class="line">
+        <span>That never night shall quench,</span>
+      </div>
+      <div class="line">
+        <span>Nor darkness vanquish:</span>
+      </div>
+      <div class="line">
+        <span>And, at dawn,</span>
+      </div>
+      <div class="line">
+        <span>I die.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>And yet, this morning, as I slowly climbed</span>
+      </div>
+      <div class="line">
+        <span>The steep, ascending stages</span>
+      </div>
+      <div class="line">
+        <span>That lead up to the hanging-gardens--</span>
+      </div>
+      <div class="line">
+        <span>Where, tier on tier,</span>
+      </div>
+      <div class="line">
+        <span>The great brick arches bore</span>
+      </div>
+      <div class="line">
+        <span>Their April wealth of blossoms,</span>
+      </div>
+      <div class="line">
+        <span>Plumed with palm and dusky cypress--</span>
+      </div>
+      <div class="line">
+        <span>I little knew that I</span>
+      </div>
+      <div class="line">
+        <span>Who came to carve a garland</span>
+      </div>
+      <div class="line">
+        <span>Round a fountain's porphry basin,</span>
+      </div>
+      <div class="line">
+        <span>Should scale so soon the utmost peak of life.</span>
+      </div>
+      <div class="line">
+        <span>Throughout the morn I toiled,</span>
+      </div>
+      <div class="line">
+        <span>Until an hour ere noon--</span>
+      </div>
+      <div class="line">
+        <span>For no one, save the King and Queen,</span>
+      </div>
+      <div class="line">
+        <span>May walk in those high gardens, after midday--</span>
+      </div>
+      <div class="line">
+        <span>When, underneath a cypress shade,</span>
+      </div>
+      <div class="line">
+        <span>I paused, a moment, resting;</span>
+      </div>
+      <div class="line">
+        <span>And looking down upon the basking city,</span>
+      </div>
+      <div class="line">
+        <span>Beneath me slumbering deeply--</span>
+      </div>
+      <div class="line">
+        <span>Garden on garden glowing, grove on grove,</span>
+      </div>
+      <div class="line">
+        <span>Like some green fabric, shot with myriad hues,</span>
+      </div>
+      <div class="line">
+        <span>And chequered with white clusters of flat roofs,</span>
+      </div>
+      <div class="line">
+        <span>Aquiver in clear heat:</span>
+      </div>
+      <div class="line">
+        <span>And then I gazed up through the aching azure,</span>
+      </div>
+      <div class="line">
+        <span>At the restless kites that hover</span>
+      </div>
+      <div class="line">
+        <span>Ever over Babylon:</span>
+      </div>
+      <div class="line">
+        <span>And, as I watched one broad-winged bird that hung</span>
+      </div>
+      <div class="line">
+        <span>Above the seven-coloured pyramid</span>
+      </div>
+      <div class="line">
+        <span>Of Bel's great temple,</span>
+      </div>
+      <div class="line">
+        <span>With wide pinions spread,</span>
+      </div>
+      <div class="line">
+        <span>As though it kept eternal vigil over</span>
+      </div>
+      <div class="line">
+        <span>The golden image in the golden shrine,</span>
+      </div>
+      <div class="line">
+        <span>I thought of eagles poised</span>
+      </div>
+      <div class="line">
+        <span>Above the peaks of glittering snows,</span>
+      </div>
+      <div class="line">
+        <span>Beyond the Eastern plains.</span>
+      </div>
+      <div class="line">
+        <span>Half-dreaming, thus, I lay,</span>
+      </div>
+      <div class="line">
+        <span>Lulled by the tinkling waters,</span>
+      </div>
+      <div class="line">
+        <span>Till, unawares, sleep slowly overcame me;</span>
+      </div>
+      <div class="line">
+        <span>And noonday drifted by:</span>
+      </div>
+      <div class="line">
+        <span>And still, I slept, unheeding:</span>
+      </div>
+      <div class="line">
+        <span>And, in my sleep,</span>
+      </div>
+      <div class="line">
+        <span>I looked on Beauty in a quiet place</span>
+      </div>
+      <div class="line">
+        <span>Of forest gloom and immemorial dream:</span>
+      </div>
+      <div class="line">
+        <span>When, something rousing me from slumber,</span>
+      </div>
+      <div class="line">
+        <span>With waking eyes that yet seemed dream-enchanted,</span>
+      </div>
+      <div class="line">
+        <span>I looked upon the Queen,</span>
+      </div>
+      <div class="line">
+        <span>Where, in a secret close,</span>
+      </div>
+      <div class="line">
+        <span>Set thickly round with screens of yew and ilex,</span>
+      </div>
+      <div class="line">
+        <span>She stood upon the dark, broad brim</span>
+      </div>
+      <div class="line">
+        <span>Of a wide granite basin, gazing down,</span>
+      </div>
+      <div class="line">
+        <span>With dreaming eyes, into the glooming cool,</span>
+      </div>
+      <div class="line">
+        <span>Unraimented, save of the flickering gleam,</span>
+      </div>
+      <div class="line">
+        <span>Reflected from the lucent waters,</span>
+      </div>
+      <div class="line">
+        <span>That flowed before her silently:</span>
+      </div>
+      <div class="line">
+        <span>And slowly, from her feet,</span>
+      </div>
+      <div class="line">
+        <span>The cold light rippled up her body, till,</span>
+      </div>
+      <div class="line">
+        <span>Entangled in the meshes of her hair,</span>
+      </div>
+      <div class="line">
+        <span>It flooded the calm rapture of her face:</span>
+      </div>
+      <div class="line">
+        <span>When, dreaming still, she lifted up her eyes,</span>
+      </div>
+      <div class="line">
+        <span>Unseeing; and I looked upon her soul,</span>
+      </div>
+      <div class="line">
+        <span>Unveiled, in naked immortality,</span>
+      </div>
+      <div class="line">
+        <span>Untrammelled by the trappings of brief time,</span>
+      </div>
+      <div class="line">
+        <span>And cloaks of circumstance.</span>
+      </div>
+      <div class="line">
+        <span>How long I looked upon the perfect beauty,</span>
+      </div>
+      <div class="line">
+        <span>I cannot tell--</span>
+      </div>
+      <div class="line">
+        <span>Each moment, flowing to eternity,</span>
+      </div>
+      <div class="line">
+        <span>Bearing me further from time's narrow shores;</span>
+      </div>
+      <div class="line">
+        <span>Though, yet, a little while,</span>
+      </div>
+      <div class="line">
+        <span>From those unshadowed deeps time sought to hold me.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>Suddenly, I felt</span>
+      </div>
+      <div class="line">
+        <span>A ghostly arrow pierce my life;</span>
+      </div>
+      <div class="line">
+        <span>And I leapt up, and turning,</span>
+      </div>
+      <div class="line">
+        <span>I saw the King beside me,</span>
+      </div>
+      <div class="line">
+        <span>With steely, glittering eyes</span>
+      </div>
+      <div class="line">
+        <span>Shooting barbed anger,</span>
+      </div>
+      <div class="line">
+        <span>Though he coldly spake,</span>
+      </div>
+      <div class="line">
+        <span>With evil, curling lips:</span>
+      </div>
+      <div class="line">
+        <span>"Slave, thou art dead!"</span>
+      </div>
+      <div class="line">
+        <span>And yet I did not quail:</span>
+      </div>
+      <div class="line">
+        <span>But, looking 'twixt his brows,</span>
+      </div>
+      <div class="line">
+        <span>I answered: and he blenched before my words:</span>
+      </div>
+      <div class="line">
+        <span>"Nay! I have seen:</span>
+      </div>
+      <div class="line">
+        <span>"And am newborn, a King!"</span>
+      </div>
+      <div class="line">
+        <span>And then his craven fingers</span>
+      </div>
+      <div class="line">
+        <span>Went quaking to his wagging beard,</span>
+      </div>
+      <div class="line">
+        <span>As if he felt my clutch upon his throat:</span>
+      </div>
+      <div class="line">
+        <span>Yet, though, with one quick blow,</span>
+      </div>
+      <div class="line">
+        <span>I might have hurled him down to death,</span>
+      </div>
+      <div class="line">
+        <span>I never stirred:</span>
+      </div>
+      <div class="line">
+        <span>And, eyeing me, he summoned</span>
+      </div>
+      <div class="line">
+        <span>The negro-eunuchs, who kept watch below:</span>
+      </div>
+      <div class="line">
+        <span>But I, ere they could spring up the first stage,</span>
+      </div>
+      <div class="line">
+        <span>Went forth to meet them;</span>
+      </div>
+      <div class="line">
+        <span>And they bound my wrists.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>And so, down from the hills, my life has flowed,</span>
+      </div>
+      <div class="line">
+        <span>Until, at fullest flood, it meets the sea.</span>
+      </div>
+      <div class="line">
+        <span>With calm and unregretful heart, I wait</span>
+      </div>
+      <div class="line">
+        <span>Till dawn shall loose the arrow from the bow.</span>
+      </div>
+      <div class="line">
+        <span>I, who, with eager, faltering hand have sought</span>
+      </div>
+      <div class="line">
+        <span>To fashion a little beauty, in the end,</span>
+      </div>
+      <div class="line">
+        <span>Have looked on the perfect beauty, and I die--</span>
+      </div>
+      <div class="line">
+        <span>Even as the priest, who, in the heart of night,</span>
+      </div>
+      <div class="line">
+        <span>Trembling before the thunder-riven shrine,</span>
+      </div>
+      <div class="line">
+        <span>Looks on the face of God, and perishes.</span>
+      </div>
+      <div class="line">
+        <span>I die...</span>
+      </div>
+      <div class="line">
+        <span>And yet, maybe, when earth lies heavily</span>
+      </div>
+      <div class="line">
+        <span>Upon the time-o'ertoppled towers,</span>
+      </div>
+      <div class="line">
+        <span>And tumbled walls, and broken gates of brass;</span>
+      </div>
+      <div class="line">
+        <span>And the winds whisper one another:</span>
+      </div>
+      <div class="line">
+        <span>"Where, Oh! where is Babylon?"</span>
+      </div>
+      <div class="line">
+        <span>In the dim underworld of dreaming shades,</span>
+      </div>
+      <div class="line">
+        <span>My soul shall seek out beauty</span>
+      </div>
+      <div class="line">
+        <span>And look, once more,</span>
+      </div>
+      <div class="line">
+        <span>Upon the unveiled vision...</span>
+      </div>
+      <div class="line">
+        <span>And not die.</span>
+      </div>
+    </div>
+    <div class="line-block outermost">
+      <div class="line">
+        <span>Night passes: and already in the court,</span>
+      </div>
+      <div class="line">
+        <span>Amid the plash of fountains,</span>
+      </div>
+      <div class="line">
+        <span>There sounds the pad of naked feet approaching.</span>
+      </div>
+      <div class="line">
+        <span>With slow, deliberate pace,</span>
+      </div>
+      <div class="line">
+        <span>As though they trod out all my perished years,</span>
+      </div>
+      <div class="line">
+        <span>The Nubians come, to lead me out to death.</span>
+      </div>
+      <div class="line">
+        <span>Slowly the great door opens;</span>
+      </div>
+      <div class="line">
+        <span>And clearer comes the call of waters;</span>
+      </div>
+      <div class="line">
+        <span>Cool airs are on my brow ...</span>
+      </div>
+      <div class="line">
+        <span>Lo! ... in the East, the dawn.</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center pfirst"><span class="small">LONDON: PRINTED BY WILLIAM CLOWES AND SONS, LIMITED.</span></p>
+    <div class="vspace" style="height: 6em"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="backmatter"></div>
+    <div class="cleardoublepage"></div>
+  </div>
+</body>
+</html>
